@@ -4,7 +4,7 @@ import fire from "./fire";
 import Login from './Login';
 import HomePage from "./HomePage";
 import './App.css';
-
+//comment
 const App = () => {
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
