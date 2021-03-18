@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/WeCook/static/css/main.3d34ea14.chunk.css",
-    "main.js": "/WeCook/static/js/main.04464f2a.chunk.js",
-    "main.js.map": "/WeCook/static/js/main.04464f2a.chunk.js.map",
-    "runtime-main.js": "/WeCook/static/js/runtime-main.15cce6be.js",
-    "runtime-main.js.map": "/WeCook/static/js/runtime-main.15cce6be.js.map",
-    "static/js/2.cb09ed03.chunk.js": "/WeCook/static/js/2.cb09ed03.chunk.js",
-    "static/js/2.cb09ed03.chunk.js.map": "/WeCook/static/js/2.cb09ed03.chunk.js.map",
-    "static/js/3.40743f2b.chunk.js": "/WeCook/static/js/3.40743f2b.chunk.js",
-    "static/js/3.40743f2b.chunk.js.map": "/WeCook/static/js/3.40743f2b.chunk.js.map",
-    "index.html": "/WeCook/index.html",
-    "static/css/main.3d34ea14.chunk.css.map": "/WeCook/static/css/main.3d34ea14.chunk.css.map",
-    "static/js/2.cb09ed03.chunk.js.LICENSE.txt": "/WeCook/static/js/2.cb09ed03.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/WeCook/static/media/logo.6ce24c58.svg"
+    "main.css": "/react-test-SE/static/css/main.3d34ea14.chunk.css",
+    "main.js": "/react-test-SE/static/js/main.c8a2c877.chunk.js",
+    "main.js.map": "/react-test-SE/static/js/main.c8a2c877.chunk.js.map",
+    "runtime-main.js": "/react-test-SE/static/js/runtime-main.ff2483f7.js",
+    "runtime-main.js.map": "/react-test-SE/static/js/runtime-main.ff2483f7.js.map",
+    "static/js/2.d2224a6d.chunk.js": "/react-test-SE/static/js/2.d2224a6d.chunk.js",
+    "static/js/2.d2224a6d.chunk.js.map": "/react-test-SE/static/js/2.d2224a6d.chunk.js.map",
+    "static/js/3.40743f2b.chunk.js": "/react-test-SE/static/js/3.40743f2b.chunk.js",
+    "static/js/3.40743f2b.chunk.js.map": "/react-test-SE/static/js/3.40743f2b.chunk.js.map",
+    "index.html": "/react-test-SE/index.html",
+    "static/css/main.3d34ea14.chunk.css.map": "/react-test-SE/static/css/main.3d34ea14.chunk.css.map",
+    "static/js/2.d2224a6d.chunk.js.LICENSE.txt": "/react-test-SE/static/js/2.d2224a6d.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/react-test-SE/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.15cce6be.js",
-    "static/js/2.cb09ed03.chunk.js",
+    "static/js/runtime-main.ff2483f7.js",
+    "static/js/2.d2224a6d.chunk.js",
     "static/css/main.3d34ea14.chunk.css",
-    "static/js/main.04464f2a.chunk.js"
+    "static/js/main.c8a2c877.chunk.js"
   ]
 }
