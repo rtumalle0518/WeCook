@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import style from './recipe.module.css'
 
-export default function Recipe() {
-    return (
+const Recipe = ({title, calories, image, ingredients}) => {
+    return(
         <div>
-            Recipe page
+            <h1 className = {style.recipe} >{title}</h1>
+
+            <ul>
+                {ingredients.map(ingredient => (
+                    <li>{ingredient.text}</li>
+                ))}
+            </ul>
+
+            <img src={image} alt=""/>
+            <p>calories: {calories}</p>
+
+
         </div>
     )
 }
+
+export default Recipe;
