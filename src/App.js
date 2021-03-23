@@ -161,14 +161,17 @@ return (
         <DashBoard/>
       </Route>
       <Route path = "/Recipe">
-      <div className = "App">
+
+  <div className = "App">
      <form onSubmit={getSearch} className="search-form"> 
        <input className="search-bar" type="text" value={search} onChange={updateSearch} />
        <button className="search-button" type= "submit">
          Search 
        </button> 
      </form>
-     <div className = "meal">
+
+     <div className = "flex-container">
+
      {recipes.map(recipe =>(
        <Recipe 
        key={recipe.recipe.label}
@@ -178,8 +181,9 @@ return (
        ingredients={recipe.recipe.ingredients}
        />
      ))}
+     
      </div>
-     </div>
+  </div>
         
       </Route>
       </Switch>
