@@ -153,19 +153,23 @@ button {
 }
 
 .search-bar{
-  width: 50%;
+  width: 40%;
   border: 3px solid black;  
-  padding: 20px;
+  padding: 15px;
 }
 
 .search-button{
   background: #8fd3f4;
   border: 1px solid black;
   color:black; /*color of the text*/
+  width: 100px;
 }
 
-.meal{
+.flex-container{ /*this will work as my container*/
   display:flex;
+  border: 10px solid white;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
+  align-items: center;
 }
+
