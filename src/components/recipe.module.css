@@ -1,4 +1,4 @@
-.recipe{ /*this only controls the title of all the recipes*/
+ .recipe{ /*this only controls the title of all the recipes*/
     border-radius: 20px;
     box-shadow: 0px 5px 5px black;
     margin: 20px;
@@ -8,7 +8,7 @@
     background:white;
     align-items: center;
     min-width: 40%;
-    display: flex;
+    font-size: small;
    
 }
 
