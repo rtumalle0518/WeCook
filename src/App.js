@@ -122,15 +122,12 @@ const getSearch = e =>{ //event
 
 return (
   /* Exact path = "/" is the first page you see like facebook. Ask you to login/signup.
-
      <Route path = "nameOfPath">
       <nameOfPath/>
      </Route>
-
      Note: Replace nameOfPath with name of exact javascript file name, for example - DashBoard.
      Also remember to put this [import nameOfPath from "./nameOfPath"] all the way ontop of this App.js file,
      for example - import DashBoard from "./DashBoard"
-
      Note 2: Then in any javascript file aside from App.js you could put this [<Link to = "/nameOfPath">nameOfPath</Link>]
      This adds a button to go to any javascript file that you added below in the Routes.
      Also remember to add [import {Link} from "react-router-dom"] in the top of the javascript file 
@@ -157,10 +154,15 @@ return (
             />
             )}
       </Route>
-      <Route path = "/DashBoard"> 
-        <DashBoard/>
+      <Route path = "/HomePage"> 
+        <HomePage/>   
       </Route>
       <Route path = "/Recipe">
+      <Route path = "/Dashboard"> 
+        <DashBoard/>
+      </Route>
+        
+      
 
   <div className = "App">
      <form onSubmit={getSearch} className="search-form"> 

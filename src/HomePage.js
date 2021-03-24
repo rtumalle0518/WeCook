@@ -1,15 +1,31 @@
-import React from 'react';
-import {Link} from "react-router-dom"
-const HomePage = ({handleLogout}) => {
-    return(
-        <section className = "HomePage">
-            <nav>
-                <h2>Welcome</h2>
-                <button onClick={handleLogout}>Logout</button>
-                Go to DashBoard? <Link to = "/DashBoard">DashBoard</Link>
-            </nav>
-        </section>
-    )
-}
+import React, { Component } from 'react';
+import { Button } from 'reactstrap';
+import './HomePage.css';
+import { NavLink } from 'react-router-dom';
 
-export default HomePage;
+
+
+
+
+
+
+
+class Home extends Component  {
+        
+    render()
+    {
+        return ( 
+                <div id='divId'>
+
+                    <Button id="button"   >
+                        <NavLink to="/Wecook" >GETTING STARTED</NavLink>
+                    </Button>
+                </div>
+              
+        );
+    }
+
+} 
+  
+
+export default Home;
