@@ -10,7 +10,7 @@ import Recipe from "./Recipe";
 
 function App() { //the problem is probably the css it is enclosed in
   return (
-    <Container className="d-flex align-items-center justify-content-center"
+    <Container fluid className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
       >
         <div>
