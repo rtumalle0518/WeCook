@@ -40,7 +40,7 @@ export default function Recipe() {
             <div className = {style.recipe}>
                 <h1 >{title}</h1>
     
-                <ol>
+                <ol className = {style.list}>
                     {ingredients.map(ingredient => (
                         <li>{ingredient.text}</li>
                     ))}
@@ -55,7 +55,7 @@ export default function Recipe() {
     }
 
     return(
-        <>
+        
             <div className = "App">
                 <form onSubmit={getSearch} className="search-form"> 
                     <input className="search-bar" type="text" value={search} onChange={updateSearch} />
@@ -64,7 +64,7 @@ export default function Recipe() {
                     </button> 
                 </form>
 
-                <div className = "flex-container">
+                <div className = "meal">
 
                     {recipes.map(recipe =>(
                         <RecipeCard 
@@ -80,6 +80,6 @@ export default function Recipe() {
             </div>
             
             
-        </>
+        
     )
 }
