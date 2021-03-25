@@ -64,7 +64,7 @@ export default function Recipe() {
                     </button> 
                 </form>
 
-                <div className = "flex-container">
+                <div className = "meal">
 
                     {recipes.map(recipe =>(
                         <RecipeCard 
