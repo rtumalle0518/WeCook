@@ -17,3 +17,9 @@
     width: 100px;
     height: 100px;
 }
+
+.list{
+    word-wrap: break-word;
+    width: 350px;
+    
+}

@@ -40,7 +40,7 @@ export default function Recipe() {
             <div className = {style.recipe}>
                 <h1 >{title}</h1>
     
-                <ol>
+                <ol className = {style.list}>
                     {ingredients.map(ingredient => (
                         <li>{ingredient.text}</li>
                     ))}
