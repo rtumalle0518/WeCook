@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Card, Button, Alert } from "react-bootstrap"
-import { useAuth, userAuth } from '../contexts/AuthContext'
+import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 
 export default function Dashboard() {
@@ -27,7 +27,6 @@ export default function Dashboard() {
                     {error && <Alert variant="danger">{error}</Alert>}
                     <strong>Email:</strong> {currentUser.email}
                     <Link to="/recipe" className="btn btn-primary w-100 mt-3">Go to Recipe Page!</Link>
-                    <Link to="/update-profile" className="btn btn-primary w-100 mt-3">Update Profile</Link>
                 </Card.Body>
             </Card>
             <div className="w-100 text-center mt-2">
