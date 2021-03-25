@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/WeCook/static/css/main.622b25b2.chunk.css",
-    "main.js": "/WeCook/static/js/main.526f76f2.chunk.js",
-    "main.js.map": "/WeCook/static/js/main.526f76f2.chunk.js.map",
-    "runtime-main.js": "/WeCook/static/js/runtime-main.96ed35d9.js",
-    "runtime-main.js.map": "/WeCook/static/js/runtime-main.96ed35d9.js.map",
-    "static/js/2.a527a452.chunk.js": "/WeCook/static/js/2.a527a452.chunk.js",
-    "static/js/2.a527a452.chunk.js.map": "/WeCook/static/js/2.a527a452.chunk.js.map",
-    "static/js/3.bcd44c6b.chunk.js": "/WeCook/static/js/3.bcd44c6b.chunk.js",
-    "static/js/3.bcd44c6b.chunk.js.map": "/WeCook/static/js/3.bcd44c6b.chunk.js.map",
-    "index.html": "/WeCook/index.html",
-    "static/css/main.622b25b2.chunk.css.map": "/WeCook/static/css/main.622b25b2.chunk.css.map",
-    "static/js/2.a527a452.chunk.js.LICENSE.txt": "/WeCook/static/js/2.a527a452.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/WeCook/static/media/logo.6ce24c58.svg"
+    "main.css": "//rtumalle0518.github.io/WeCook/static/css/main.668421ca.chunk.css",
+    "main.js": "//rtumalle0518.github.io/WeCook/static/js/main.8e980ed4.chunk.js",
+    "main.js.map": "//rtumalle0518.github.io/WeCook/static/js/main.8e980ed4.chunk.js.map",
+    "runtime-main.js": "//rtumalle0518.github.io/WeCook/static/js/runtime-main.13f86768.js",
+    "runtime-main.js.map": "//rtumalle0518.github.io/WeCook/static/js/runtime-main.13f86768.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "//rtumalle0518.github.io/WeCook/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.23c6e6b5.chunk.js": "//rtumalle0518.github.io/WeCook/static/js/2.23c6e6b5.chunk.js",
+    "static/js/2.23c6e6b5.chunk.js.map": "//rtumalle0518.github.io/WeCook/static/js/2.23c6e6b5.chunk.js.map",
+    "index.html": "//rtumalle0518.github.io/WeCook/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "//rtumalle0518.github.io/WeCook/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.668421ca.chunk.css.map": "//rtumalle0518.github.io/WeCook/static/css/main.668421ca.chunk.css.map",
+    "static/js/2.23c6e6b5.chunk.js.LICENSE.txt": "//rtumalle0518.github.io/WeCook/static/js/2.23c6e6b5.chunk.js.LICENSE.txt",
+    "static/media/App.css": "//rtumalle0518.github.io/WeCook/static/media/WeCookPhoto.844ec377.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.96ed35d9.js",
-    "static/js/2.a527a452.chunk.js",
-    "static/css/main.622b25b2.chunk.css",
-    "static/js/main.526f76f2.chunk.js"
+    "static/js/runtime-main.13f86768.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.23c6e6b5.chunk.js",
+    "static/css/main.668421ca.chunk.css",
+    "static/js/main.8e980ed4.chunk.js"
   ]
 }
