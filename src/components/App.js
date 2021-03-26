@@ -18,7 +18,7 @@ function App() { //the problem is probably the css it is enclosed in
             <AuthProvider>
               <Switch>
                 <PrivateRoute exact path="/" component={Dashboard} />
-                <Route path="/signup" component={Signup} />
+                <Route path="/WeCook" component={Signup} />
                 <Route path="/login" component={Login} />
                 <Route path="/forgot-password" component={ForgotPassword} />
                 <Route path = "/recipe" component={Recipe}/> 
