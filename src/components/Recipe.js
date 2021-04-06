@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from './recipe.module.css'
 import './App.css';
+import NavigationBar from "./NavigationBar";
 
 export default function Recipe() {
     //below we define the useStates
@@ -55,8 +56,8 @@ export default function Recipe() {
     }
 
     return(
-        
             <div className = "App">
+                <NavigationBar></NavigationBar>
                 <form onSubmit={getSearch} className="search-form"> 
                     <input className="search-bar" type="text" value={search} onChange={updateSearch} />
                     <button className="search-button" type= "submit">
