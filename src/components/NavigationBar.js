@@ -24,7 +24,6 @@ export default function NavigationBar() {
                     <Nav.Link href="/signup">Sign Up</Nav.Link>
                 </Nav>
             </Navbar>
-            
         </>
     )
 }
