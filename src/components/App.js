@@ -7,6 +7,7 @@ import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import Recipe from "./Recipe";
+import Homepage from "./Homepage";
 
 function App() { //the problem is probably the css it is enclosed in
   return (
@@ -18,7 +19,8 @@ function App() { //the problem is probably the css it is enclosed in
             <AuthProvider>
               <Switch>
                 <PrivateRoute exact path="/" component={Dashboard} />
-                <Route path="/WeCook" component={Signup} />
+                <Route path="/WeCook" component={Homepage} />
+                <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />
                 <Route path="/forgot-password" component={ForgotPassword} />
                 <Route path = "/recipe" component={Recipe}/> 
