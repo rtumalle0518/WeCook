@@ -1,10 +1,10 @@
 import React from 'react'
-import Navigationbar from './Navigationbar'
+import NavigationBar from './NavigationBar'
 
 export default function Homepage() {
     return (
         <div>
-            <Navigationbar></Navigationbar>
+            <NavigationBar></NavigationBar>
         </div>
     )
 }

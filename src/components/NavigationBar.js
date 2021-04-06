@@ -1,8 +1,9 @@
 import React from 'react'
+import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import { Link } from 'react-router-dom'
 import logo from '../images/WeCookLogo.png'
-export default function Navigationbar() {
+
+export default function NavigationBar() {
     return (
         <>
             <Navbar sticky="top" bg="light">
@@ -15,6 +16,13 @@ export default function Navigationbar() {
                         alt="We Cook Logo"
                     />    
                 </Navbar.Brand>
+                <Nav className="mr-auto">
+                    <Nav.Link href="/recipe">Recipes</Nav.Link>
+                </Nav>
+                <Nav className="ml-auto">
+                    <Nav.Link href="/login">Log In</Nav.Link>
+                    <Nav.Link href="/signup">Sign Up</Nav.Link>
+                </Nav>
             </Navbar>
             
         </>
