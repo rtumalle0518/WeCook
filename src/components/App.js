@@ -8,7 +8,7 @@ import ForgotPassword from "./ForgotPassword"
 import Recipe from "./Recipe";
 import Homepage from "./Homepage";
 
-function App() { //the problem is probably the css it is enclosed in
+function App() {
   return (
     <div>
       <Router>

@@ -7,7 +7,7 @@ export default function NavigationBar() {
     return (
         <>
             <Navbar sticky="top" bg="light">
-                <Navbar.Brand href="WeCook">
+                <Navbar.Brand href="WeCook" style={{ width: "calc(100%/7)" }}>
                     <img
                         src={logo}
                         width="175"
