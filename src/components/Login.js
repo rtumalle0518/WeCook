@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+import { Form, Button, Card, Alert, Container } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 
@@ -27,7 +27,7 @@ export default function Login() {
         
     }
     return (
-        <>
+        <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh"}}>
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Log In</h2>
@@ -47,11 +47,12 @@ export default function Login() {
                         <Link to="/forgot-password">Forgot Password?</Link>
                     </div>
                 </Card.Body>
+                <div className="w-100 text-center mt-2">
+                    Need an account? <Link to ='/WeCook'>Sign Up</Link>
+                </div>
+                
             </Card>
-            <div className="w-100 text-center mt-2">
-                Need an account? <Link to ='/WeCook'>Sign Up</Link>
-            </div>
 
-        </>
+        </Container>
     )
 }

@@ -11,24 +11,22 @@ import Homepage from "./Homepage";
 
 function App() { //the problem is probably the css it is enclosed in
   return (
-    <Container fluid className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
-      >
-        <div>
-          <Router>
-            <AuthProvider>
-              <Switch>
-                <PrivateRoute exact path="/" component={Dashboard} />
-                <Route path="/WeCook" component={Homepage} />
-                <Route path="/signup" component={Signup} />
-                <Route path="/login" component={Login} />
-                <Route path="/forgot-password" component={ForgotPassword} />
-                <Route path = "/recipe" component={Recipe}/> 
-              </Switch>
-            </AuthProvider>
-          </Router>
-        </div>
-    </Container>
+
+      <div>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <PrivateRoute exact path="/" component={Dashboard} />
+              <Route path="/WeCook" component={Homepage} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path = "/recipe" component={Recipe}/> 
+            </Switch>
+          </AuthProvider>
+        </Router>
+      </div>
+
     
   )
 }

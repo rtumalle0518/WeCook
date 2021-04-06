@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Navigationbar() {
     return (
         <>
-            <Navbar bg="light">
+            <Navbar expand="lg" bg="light">
                 <Navbar.Brand to='/WeCook'>WeCook</Navbar.Brand>
             </Navbar>
             
