@@ -7,7 +7,7 @@ import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import Recipe from "./Recipe";
 import Homepage from "./Homepage";
-
+import Survey from "./Survey";
 function App() {
   return (
     <div>
@@ -20,6 +20,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/forgot-password" component={ForgotPassword} />
             <Route path = "/recipe" component={Recipe}/> 
+            <Route path = "/survey" component={Survey}/> 
           </Switch>
         </AuthProvider>
       </Router>
