@@ -17,21 +17,8 @@ export default function NavigationBar() {
                 </Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/recipe">Recipes</Nav.Link>
-                </Nav>
-
-                <Navbar.Brand href="WeCook" style={{ width: "calc(100%/7)" }}>
-                    <img
-                        src={logo}
-                        width="175"
-                        height="40" 
-                        className="d-inline-block align-top"
-                        alt="We Cook Logo"
-                    />    
-                </Navbar.Brand>
-                <Nav className="mr-auto">
                     <Nav.Link href="/survey">Survey</Nav.Link>
-                </Nav>
-                
+                </Nav>    
                 
                 <Nav className="ml-auto">
                     <Nav.Link href="/login">Log In</Nav.Link>
