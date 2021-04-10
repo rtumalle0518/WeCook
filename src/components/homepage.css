@@ -1,0 +1,17 @@
+.words{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+.paragraph{
+    max-width: 625px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    color: #747474;
+    padding-bottom: 10px;
+}
+.colourtext{
+    
+}
