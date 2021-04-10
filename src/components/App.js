@@ -8,6 +8,7 @@ import ForgotPassword from "./ForgotPassword"
 import Recipe from "./Recipe";
 import Homepage from "./Homepage";
 import Survey from "./Survey";
+import textbox from "./textbox";
 function App() {
   return (
     <div>
@@ -21,6 +22,7 @@ function App() {
             <Route path="/forgot-password" component={ForgotPassword} />
             <Route path = "/recipe" component={Recipe}/> 
             <Route path = "/survey" component={Survey}/> 
+            <Route path="/textbox" component={textbox} />
           </Switch>
         </AuthProvider>
       </Router>
