@@ -7,12 +7,16 @@ const app = express();
 const PORT=process.env.PORT;
 
 //pw is rutgers12
-const MONGODB_URI='mongodb+srv://team12:rutgers12@test.cozvd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const MONGODB_URI='mongodb+srv://team12:rutgers12@test.cozvd.mongodb.net/newdb?retryWrites=true&w=majority'
 
 mongoose.connect(MONGODB_URI || 'mongodb://localhost/team12db',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 });
+
+mongoose.connection.on('connected',{} => {
+    console.log('Mongoose is connected');
+} );
 
 
 //schema
@@ -39,10 +43,10 @@ const data={
     body:'yumm'
 };
 
-
 const newrecipepost= new recipe(data); //instance of model
 
-newrecipe.save((error) => {
+
+newrecipepost.save((error) => {
     if (error){
         console.log('error');
         
@@ -71,4 +75,3 @@ app.get('/api/name',(req, res) => {
     res.json(data);
 });
 
-app.listen(PORT,console.log(`Server is start at ${PORT}`));
