@@ -50,6 +50,7 @@ export default function Recipe() {
                 <p>calories: {round} </p>
     
                 <img className = {style.image} src={image} alt=""/>
+                <button>Add to Favorites</button>
       
             </div>
         )
@@ -76,6 +77,7 @@ export default function Recipe() {
                         ingredients={recipe.recipe.ingredients}
                         />
                     ))}
+                    
             
                 </div>
             </div>

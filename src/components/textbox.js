@@ -57,6 +57,7 @@ export default textbox; */
 
 import React , { Component } from 'react';
 import './App.css';
+import NavigationBar from "./NavigationBar";
 import app from '../firebase';
 class App extends Component{
 
@@ -79,10 +80,12 @@ class App extends Component{
 
   render(){
     return (
-      <div className="App-header">
+      <div style = {{textAlign: 'center'}}>
+        <NavigationBar></NavigationBar>
+        <h1>This is a test textbox</h1>
        <input type ="text" onChange={this.handleText} id="inputText"/>
        <br/>
-       <button onClick={this.handleSubmit}> Save </button>
+       <button onClick={this.handleSubmit}> Send to Database </button>
       </div>
     );
   }
