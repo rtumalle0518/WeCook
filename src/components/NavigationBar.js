@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import logo from '../images/WeCookLogo.png'
 export default function NavigationBar() {
+  
     return (
         <>
             <Navbar sticky="top" bg="light">
@@ -15,21 +16,8 @@ export default function NavigationBar() {
                         alt="We Cook Logo"
                     />    
                 </Navbar.Brand>
-                <Nav className="mr-auto">
+                <Nav className="mr-auto"> 
                     <Nav.Link href="/recipe">Recipes</Nav.Link>
-                </Nav>
-
-                <Navbar.Brand href="WeCook" style={{ width: "calc(100%/7)" }}>
-                    <img
-                        src={logo}
-                        width="175"
-                        height="40" 
-                        className="d-inline-block align-top"
-                        alt="We Cook Logo"
-                    />    
-                </Navbar.Brand>
-                <Nav className="mr-auto">
-                    <Nav.Link href="/survey">Survey</Nav.Link>
                     <Nav.Link href="/textbox">textbox</Nav.Link>
                 </Nav>
                 
