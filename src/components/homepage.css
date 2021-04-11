@@ -1,9 +1,32 @@
 .words{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: medium;
+    font-family: 'Montserrat',sans-serif;
+    font-size: large;
+    color:grey;
+    position: relative;
+    left:40px;
+    top:35px;
+    max-width: 600px;
+
+    
+
+}
+.secondtext{
+    font-weight:800;
+    font-size: 60px;
+    color:#707070;
+    position: relative;
+    top:15px;
+    max-width: 600px;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    
+}
+.colourtext{
+    color:#365265;
+    
 }
 .paragraph{
-    max-width: 625px;
+    max-width: 600px;
     font-size: 20px;
     font-weight: 500;
     line-height: 120%;
@@ -11,7 +34,8 @@
     margin-top: 30px;
     color: #747474;
     padding-bottom: 10px;
-}
-.colourtext{
     
+}
+.bold{
+    font-weight:700 ;
 }
