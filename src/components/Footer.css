@@ -1,0 +1,15 @@
+.topwave {
+position:relative;
+bottom:0;
+}
+
+.column1{
+
+top:0;
+color: grey;
+background: #f4f4f4;
+position: relative;
+bottom: 0;
+width: 1091px;
+height: 100px;
+}
