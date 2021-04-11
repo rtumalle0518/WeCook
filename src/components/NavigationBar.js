@@ -18,9 +18,9 @@ export default function NavigationBar() {
                 </Navbar.Brand>
                 <Nav className="mr-auto"> 
                     <Nav.Link href="/recipe">Recipes</Nav.Link>
+                    <Nav.Link href="/survey">Survey</Nav.Link>
                     <Nav.Link href="/textbox">textbox</Nav.Link>
                 </Nav>
-                
                 
                 <Nav className="ml-auto">
                     <Nav.Link href="/login">Log In</Nav.Link>
