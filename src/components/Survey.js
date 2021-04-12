@@ -82,10 +82,10 @@ class Survey extends Component {
                         <FormControl component="fieldset">
                             <FormLabel component="legend"></FormLabel>
                                 <RadioGroup row aria-label="position" name="position">
-                                    <FormControlLabel name = "ans3" value="Lose weight" onChange = {this.answerSelected} labelPlacement="top" control={<Radio />} label="Lose weight" />
-                                    <FormControlLabel name = "ans3" value="Gain weight" onChange = {this.answerSelected} labelPlacement="top" control={<Radio />} label="Gain weight" />
-                                    <FormControlLabel name = "ans3" value="Maintain weight" onChange = {this.answerSelected} labelPlacement="top" control={<Radio />} label="Maintain weight" />
-                                    <FormControlLabel name = "ans3" value="Build muscle" onChange = {this.answerSelected} labelPlacement="top" control={<Radio />} label="Build muscle" />
+                                    <FormControlLabel name = "ans3" value="Lose weight" onChange = {this.answerSelected} labelPlacement="top" control={<Radio required />} label="Lose weight" />
+                                    <FormControlLabel name = "ans3" value="Gain weight" onChange = {this.answerSelected} labelPlacement="top" control={<Radio required />} label="Gain weight" />
+                                    <FormControlLabel name = "ans3" value="Maintain weight" onChange = {this.answerSelected} labelPlacement="top" control={<Radio required/>} label="Maintain weight" />
+                                    <FormControlLabel name = "ans3" value="Build muscle" onChange = {this.answerSelected} labelPlacement="top" control={<Radio required />} label="Build muscle" />
                                 </RadioGroup>
                         </FormControl>
                     </div>
@@ -95,10 +95,10 @@ class Survey extends Component {
                         <FormControl component="fieldset">
                             <FormLabel component="legend"></FormLabel>
                                 <RadioGroup row aria-label="position" name="position">
-                                    <FormControlLabel name = "ans4" value="Vegeterian" onClick={this.answerSelected} labelPlacement="top" control={<Radio />} label="Vegeterian" />
-                                    <FormControlLabel name = "ans4" value="Keto" onClick={this.answerSelected} labelPlacement="top" control={<Radio />} label="Keto" />
-                                    <FormControlLabel name = "ans4" value="Pescatarian" onClick={this.answerSelected} labelPlacement="top" control={<Radio />} label="Pescatarian" />
-                                    <FormControlLabel name = "ans4" value="Other" onClick={this.answerSelected} labelPlacement="top" control={<Radio />} label="Other" />
+                                    <FormControlLabel name = "ans4" value="Vegeterian" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Vegeterian" />
+                                    <FormControlLabel name = "ans4" value="Keto" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Keto" />
+                                    <FormControlLabel name = "ans4" value="Pescatarian" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Pescatarian" />
+                                    <FormControlLabel name = "ans4" value="Other" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Other" />
                                 </RadioGroup>
                         </FormControl>
                     </div>
@@ -108,10 +108,10 @@ class Survey extends Component {
                         <FormControl component="fieldset">
                             <FormLabel component="legend"></FormLabel>
                                 <RadioGroup row aria-label="position" name="position">
-                                    <FormControlLabel name = "ans5" value="Vegeterian" onClick={this.answerSelected} labelPlacement="top" control={<Radio />} label="Vegeterian" />
-                                    <FormControlLabel name = "ans5" value="Keto" onClick={this.answerSelected} labelPlacement="top" control={<Radio />} label="Keto" />
-                                    <FormControlLabel name = "ans5" value="Pescatarian" onClick={this.answerSelected} labelPlacement="top" control={<Radio />} label="Pescatarian" />
-                                    <FormControlLabel name = "ans5" value="Other" onClick={this.answerSelected} labelPlacement="top" control={<Radio />} label="Other" />
+                                    <FormControlLabel name = "ans5" value="Vegeterian" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Vegeterian" />
+                                    <FormControlLabel name = "ans5" value="Keto" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Keto" />
+                                    <FormControlLabel name = "ans5" value="Pescatarian" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Pescatarian" />
+                                    <FormControlLabel name = "ans5" value="Other" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Other" />
                                 </RadioGroup>
                         </FormControl>
                     </div>
