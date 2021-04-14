@@ -1,9 +1,12 @@
 import { render } from '@testing-library/react';
 import React, {Component} from 'react'
 import './App.css';
-import Button from '@material-ui/core/Button'
-import ButtonGroup from '@material-ui/core/ButtonGroup';
 import TextField from "@material-ui/core/TextField";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
 var uuid = require('uuid');
 
 class Survey extends Component {
@@ -23,6 +26,12 @@ class Survey extends Component {
         }
         else if(event.target.name == 'ans3'){
             answers.ans3 = event.target.value;
+        }
+        else if(event.target.name == 'ans4'){
+            answers.ans4 = event.target.value;
+        }
+        else if(event.target.name == 'ans5'){
+            answers.ans5 = event.target.value;
         }
         this.setState({answers:answers},function(){
             console.log(this.state);
@@ -70,32 +79,41 @@ class Survey extends Component {
 
                     <div className="card">
                         <label>What is your goal?</label>
-                        <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group" fullWidth>
-                            <Button name = "ans3" value="Lose weight" onClick={this.answerSelected}>Lose weight</Button>
-                            <Button name = "ans3" value="Gain weight" onClick={this.answerSelected}>Gain weight</Button>
-                            <Button name = "ans3" value="Maintain weight" onClick={this.answerSelected}>Main weight</Button>
-                            <Button name = "ans3" value="Build muscle" onClick={this.answerSelected}>Build muscle</Button>
-                        </ButtonGroup>
+                        <FormControl component="fieldset">
+                            <FormLabel component="legend"></FormLabel>
+                                <RadioGroup row aria-label="position" name="position">
+                                    <FormControlLabel name = "ans3" value="Lose weight" onChange = {this.answerSelected} labelPlacement="top" control={<Radio required />} label="Lose weight" />
+                                    <FormControlLabel name = "ans3" value="Gain weight" onChange = {this.answerSelected} labelPlacement="top" control={<Radio required />} label="Gain weight" />
+                                    <FormControlLabel name = "ans3" value="Maintain weight" onChange = {this.answerSelected} labelPlacement="top" control={<Radio required/>} label="Maintain weight" />
+                                    <FormControlLabel name = "ans3" value="Build muscle" onChange = {this.answerSelected} labelPlacement="top" control={<Radio required />} label="Build muscle" />
+                                </RadioGroup>
+                        </FormControl>
                     </div>
 
                     <div className="card">
                         <label>What is diet like?</label>
-                        <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group" fullWidth>
-                            <Button name = "ans4" value="Vegeterian" onClick={this.answerSelected}>Vegeterian</Button>
-                            <Button name = "ans4" value="Keto" onClick={this.answerSelected}>Keto</Button>
-                            <Button name = "ans4" value="Pescatarian" onClick={this.answerSelected}>Pescatarian</Button>
-                            <Button name = "ans4" value="Other" onClick={this.answerSelected}>Other</Button>
-                        </ButtonGroup>
+                        <FormControl component="fieldset">
+                            <FormLabel component="legend"></FormLabel>
+                                <RadioGroup row aria-label="position" name="position">
+                                    <FormControlLabel name = "ans4" value="Vegeterian" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Vegeterian" />
+                                    <FormControlLabel name = "ans4" value="Keto" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Keto" />
+                                    <FormControlLabel name = "ans4" value="Pescatarian" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Pescatarian" />
+                                    <FormControlLabel name = "ans4" value="Other" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Other" />
+                                </RadioGroup>
+                        </FormControl>
                     </div>
 
                     <div className="card">
                         <label>What is your diet goal?</label>
-                        <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group" fullWidth>
-                            <Button name = "ans5" value="Vegeterian" onClick={this.answerSelected}>Vegeterian</Button>
-                            <Button name = "ans5" value="Keto" onClick={this.answerSelected}>Keto</Button>
-                            <Button name = "ans5" value="Pescatarian" onClick={this.answerSelected}>Pescatarian</Button>
-                            <Button name = "ans5" value="Other" onClick={this.answerSelected}>Other</Button>
-                        </ButtonGroup>
+                        <FormControl component="fieldset">
+                            <FormLabel component="legend"></FormLabel>
+                                <RadioGroup row aria-label="position" name="position">
+                                    <FormControlLabel name = "ans5" value="Vegeterian" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Vegeterian" />
+                                    <FormControlLabel name = "ans5" value="Keto" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Keto" />
+                                    <FormControlLabel name = "ans5" value="Pescatarian" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Pescatarian" />
+                                    <FormControlLabel name = "ans5" value="Other" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Other" />
+                                </RadioGroup>
+                        </FormControl>
                     </div>
                     <input className = "feedback-button" type="submit" value="submit" />
                 </form>
