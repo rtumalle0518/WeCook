@@ -3,13 +3,27 @@ position:relative;
 bottom:0;
 }
 
-.column1{
+/*.column1{
 
 top:0;
 color: grey;
 background: #f4f4f4;
-position: relative;
+position: fixed;
 bottom: 0;
 width: 1091px;
 height: 100px;
+} */
+
+.main-footer {
+    color: black;
+    background-color: white;
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+.container{
+    min-width: 100%;
+    background-color: #f4f4f4;
 }
