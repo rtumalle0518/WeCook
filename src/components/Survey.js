@@ -7,13 +7,18 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
+import firebase from '../firebase';
+var database = firebase.database();
 var uuid = require('uuid');
 
 class Survey extends Component {
 
     surveySubmit(event){
-
-    };
+        firebase.database().ref('Survey/' + this.state.uid).set({
+            answers:this.state.answers
+        });
+        this.setState({isSubmitted:true})
+    }
 
     answerSelected(event){
         var answers = this.state.answers;
