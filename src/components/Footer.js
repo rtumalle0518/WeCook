@@ -65,23 +65,22 @@ function Footer() {
               </div>
 
   <div className="container">
-
-                              <div className="column1">                              <img
-                                     src={logo}
-                                     width="175"
-                                     height="40" 
-                                     className="d-inline-block align-top"
-                                     alt="We Cook Logo"
-                                />
-                                </div>
     
-
+           <div className="column1">
+              <img
+                  src={logo}
+                  width="175"
+                  height="40" 
+                  className="d-inline-block align-top"
+                  alt="We Cook Logo"
+                    />
+            </div>
         <div className="row">
           <p className="col-sm">
-            &copy;{new Date().getFullYear()} THICC MEMES | All rights reserved |
-            Terms Of Service | Privacy
+            &copy;{new Date().getFullYear()} Copyright © 2021 WeCook. All rights reserved.
           </p>
         </div>
+        
       </div>
     </div>
   );
