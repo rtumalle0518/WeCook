@@ -11,6 +11,7 @@ import Homepage from "./Homepage";
 import Survey from "./Survey";
 import textbox from "./textbox";
 import notFoundPage from "./notFoundPage"
+import NewRecipe from "./NewRecipe"
 function App() {
   return (
     <div>
@@ -24,8 +25,10 @@ function App() {
             <Route path="/forgot-password" component={ForgotPassword} />
             <Route path = "/recipe" component={Recipe}/> 
             <Route path = "/survey" component={Survey}/> 
+            <Route path ="/newrecipe" component= {NewRecipe}/>
             <Route path="/textbox" component={textbox} />
             <Route path ="*" component= {notFoundPage}/>
+            
           </Switch>
         </AuthProvider>
       </Router>
