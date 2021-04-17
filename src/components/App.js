@@ -12,6 +12,7 @@ import Survey from "./Survey";
 import textbox from "./textbox";
 import notFoundPage from "./notFoundPage"
 import NewRecipe from "./NewRecipe"
+import MealPlan from "./MealPlan";
 function App() {
   return (
     <div>
@@ -25,6 +26,7 @@ function App() {
             <Route path="/forgot-password" component={ForgotPassword} />
             <Route path = "/recipe" component={Recipe}/> 
             <Route path = "/survey" component={Survey}/> 
+            <Route path = "/mealplan" component={MealPlan}/>
             <Route path ="/newrecipe" component= {NewRecipe}/>
             <Route path="/textbox" component={textbox} />
             <Route path ="*" component= {notFoundPage}/>
