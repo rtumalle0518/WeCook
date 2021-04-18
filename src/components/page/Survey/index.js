@@ -10,6 +10,7 @@ import Nav from "../../shared/Nav";
 //api related
 import getPlan from "../../../utils/mealPlan";
 import { getSurveyData } from "../../../utils/data";
+import NavigationBar from "../../NavigationBar";
 
 import "./Survey.css";
 
@@ -132,7 +133,7 @@ export default class Survey extends Component {
 		const { selectOpt, dietSpec, healthSpec } = this.data;
 		return (
 			<div className="Survey">
-				<Nav />
+				<NavigationBar></NavigationBar>
 				{this.state.loading ? (
 					<div className="Survey__loading">
 						<h1 className="Survey__loading__heading">Chopping those onions</h1>
