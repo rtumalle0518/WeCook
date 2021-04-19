@@ -2,7 +2,7 @@ import React from "react";
 import Meal from "../../shared/Meal";
 import Tabs, { Tab } from "../../shared/Tabs";
 import NotFound from "../../shared/NotFound";
-import Nav from "../../shared/Nav";
+import NavigationBar from "../../NavigationBar";
 
 import "./Plan.css";
 
@@ -54,14 +54,14 @@ const Plan = (props) => {
 	if (!props.location || !props.location.state || !props.location.state.data)
 		return (
 			<div>
-				<Nav />
+				<NavigationBar></NavigationBar>
 				<NotFound />
 			</div>
 		);
 	let param = props.location.state.data;
 	return (
 		<div className="Plan">
-			<Nav />
+			<NavigationBar></NavigationBar>
 			{createTabs(param.num, param.data)}
 		</div>
 	);
