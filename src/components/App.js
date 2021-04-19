@@ -8,11 +8,13 @@ import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import Recipe from "./Recipe";
 import Homepage from "./Homepage";
-import Survey from "./Survey";
+
 import textbox from "./textbox";
 import notFoundPage from "./notFoundPage"
 import NewRecipe from "./NewRecipe"
 import MealPlan from "./MealPlan";
+import Survey from "./mealplanner/components/page/Survey";
+import Plan from "./mealplanner/components/page/Plan"
 function App() {
   return (
     <div>
@@ -25,10 +27,10 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/forgot-password" component={ForgotPassword} />
             <Route path = "/recipe" component={Recipe}/> 
-            <Route path = "/survey" component={Survey}/> 
+            <Route path = "/meal-plan" component={Plan}/> 
             <Route path = "/mealplan" component={MealPlan}/>
             <Route path ="/newrecipe" component= {NewRecipe}/>
-            <Route path="/textbox" component={textbox} />
+            <Route path="/survey" component={Survey} />
             <Route path ="*" component= {notFoundPage}/>
             
           </Switch>
