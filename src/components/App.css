@@ -156,9 +156,17 @@
 }
 
 .search-bar {
-	width: 40%;
-	border: 3px solid black;
-	padding: 15px;
+	width: 300px;
+	border: 2px solid #f4f4f4;
+	padding: 10px;
+	padding-left: 40px;
+	border-radius: 40px;
+	background-color: #f4f4f4;
+	outline: none;
+
+	background-repeat: no-repeat;
+	background-position: 10px;
+	margin: auto;
 }
 
 .search-button {
