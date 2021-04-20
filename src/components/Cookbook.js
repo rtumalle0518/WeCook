@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import NavigationBar from "./NavigationBar";
-import placehold from "../images/placeholder-image.png";
-import thumbup from "../images/thumbup.png";
-import thumbdown from "../images/thumbdown.png";
 import "./Cookbook.css";
 import Truncate from "react-truncate";
 import Footer from "./Footer";

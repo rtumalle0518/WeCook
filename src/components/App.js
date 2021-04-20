@@ -14,6 +14,7 @@ import notFoundPage from "./notFoundPage";
 import NewRecipe from "./NewRecipe";
 import Survey from "./page/Survey";
 import Plan from "./page/Plan";
+import CookBook from "./Cookbook";
 
 function App() {
 	return (
@@ -31,6 +32,7 @@ function App() {
 						<Route path="/newrecipe" component={NewRecipe} />
 						<Route path="/textbox" component={textbox} />
 						<Route path="/meal-plan" component={Plan} />
+						<Route path="/cookbook" component={CookBook} />
 					</Switch>
 				</AuthProvider>
 			</Router>
