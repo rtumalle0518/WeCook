@@ -1,12 +1,28 @@
 import React, { useContext, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { firestore } from "../firebase";
+import { useHistory } from "react-router-dom";
 
 export default function NewRecipe() {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [directions, setDirections] = useState("");
   const [description, setDescription] = useState("");
+  const [validate, setValidated] = useState(false);
+  const [currentUser, goToLogin] = useAuth();
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidated(true);
+  }
+  if(!currentUser){
+
+  }
+
 
   async function saveRecipe() {
 
