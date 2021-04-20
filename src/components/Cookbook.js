@@ -54,7 +54,6 @@ export default function CookBook(){
                         </Truncate>
                     
                     </p>
-                    <p>Calories: {round} </p>
                 </div>
                 <div className="cardinfo">
                     <div className="cardlink">
