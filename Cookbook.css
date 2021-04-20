@@ -1,0 +1,129 @@
+.Header {
+	display: flex;
+	flex-direction: row;
+}
+.rcard {
+	font-family: "Montserrat", sans-serif;
+	/* padding: 30px; */
+	margin: 10px;
+	max-width: 251px;
+	max-height: 301px;
+	min-width: 250px;
+	min-height: 300px;
+	/* max-width:20%; */
+}
+
+.cardimage {
+	width: 250px;
+	height: 150px;
+	object-fit: cover;
+	display: block;
+	/* border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333; */
+}
+
+.cardcontent {
+	line-height: 1.5;
+	font-size: 0.9em;
+	padding: 15px;
+	background: #fafafa;
+	/* border-right: 2px solid #333333;
+    border-left: 2px solid #333333; */
+	width: 250px;
+}
+
+.cardcontent > p:first-of-type {
+	margin-top: 0;
+}
+
+.cardcontent > p:last-of-type {
+	margin-bottom: 0;
+}
+
+.cardinfo {
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #555555;
+	background: #eeeeee;
+	font-size: 0.8em;
+	width: 250px;
+	/* border-bottom: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333; */
+}
+
+.cardlink {
+	color: #64968c;
+	text-decoration: none;
+}
+
+.cardlink:hover {
+	text-decoration: underline;
+}
+.cookbooktext {
+	text-align: left;
+	font-family: "Montserrat", sans-serif;
+	color: #365265;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 50px;
+	margin: 20px;
+}
+.searching {
+	width: 40%;
+	border: 2px solid #f4f4f4;
+	padding: 10px;
+	padding-left: 40px;
+	border-radius: 40px;
+	background-color: #f4f4f4;
+	outline: none;
+	background-image: url("../images/searchicon.png");
+	background-repeat: no-repeat;
+	background-position: 10px;
+}
+form {
+	display: inline-block !important;
+	padding-top: 30px;
+	margin-left: 100px;
+}
+.Search-Form {
+	min-height: 15vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.maincontainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.SideBar {
+	border-right-style: groove;
+	width: fit-content;
+}
+ul {
+	text-align: left;
+	font-family: "Montserrat", sans-serif;
+	color: grey;
+	letter-spacing: 1px;
+	margin: 10px;
+	list-style-type: none;
+	cursor: pointer;
+}
+.container1 div {
+	/* display:inline-block; */
+	display: inline-grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-auto-rows: auto;
+
+	/* grid-gap: 30px;
+      margin: 30px;
+      grid-template-columns: 40px auto auto auto;
+      grid-template-rows: auto auto auto auto;
+      width: 200px;
+      height: 200px;
+      background-color:grey; */
+}
