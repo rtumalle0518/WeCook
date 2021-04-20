@@ -1,60 +1,66 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../contexts/UserContext";
+import { useAuth } from "../contexts/AuthContext";
 import { firestore } from "../firebase";
 
-const NewRecipe = () => {
-  const [name, setName] = useState("");
+export default function NewRecipe() {
+  const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
+  const [directions, setDirections] = useState("");
   const [description, setDescription] = useState("");
 
-  const user = useContext(UserContext);
+  async function saveRecipe() {
 
-  const saveRecipe = async (e) => {
-    e.preventDefault();
+    const ingredientsArray = ingredients.split("\n");
+    const directionsArray = directions.split("\n")
 
-    const ingredientsArray = ingredients.split(",");
 
-    
       await firestore
-      .collection("users")
-      .doc(user.uid)
-      .collection("addedrecipes")
-      .add({
-        name,
-        ingredients: ingredientsArray,
-        description,
-      });
+        .collection("recipes")
+        .add({
+          name: title,
+          description: description,
+          ingredients: ingredientsArray,
+          directions: directionsArray,
+        });
 
-    setName("");
+    setTitle("");
     setIngredients("");
     setDescription("");
+    setDirections("");
   };
 
+
   return (
-    <div className="new-recipe">
-      <h1>New recipe</h1>
-      <form>
-        <input
-          type="text"
-          placeholder="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />{" "}
-        <input
-          type="text"
-          placeholder="Ingredients separated by comma"
-          value={ingredients}
-          onChange={(e) => setIngredients(e.target.value)}
-        />
-        <textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button onClick={saveRecipe}>Save recipe</button>
-      </form>
-    </div>
+      <div className="new-recipe">
+        <h1>New recipe</h1>
+        <form>
+          <input
+            type="text"
+            placeholder="Recipe Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+          <textarea
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <textarea
+            type="text"
+            placeholder="Ingredients separated by comma"
+            value={ingredients}
+            onChange={(e) => setIngredients(e.target.value)}
+            required
+          />
+          <textarea
+            placeholder="Directions seperated by line"
+            value={directions}
+            required
+          />
+          <button onClick={saveRecipe}>Save recipe</button>
+        </form>
+      </div>
   );
 };
-
-export default NewRecipe;
