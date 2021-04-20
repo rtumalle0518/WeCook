@@ -139,53 +139,39 @@
   }
   */
   
-  .App{
+  .App {
     min-height: 100vh;
-    /*background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); /* copied from webgradients.com */
+    background-image: linear-gradient(
+      120deg,
+      #84fab0 0%,
+      #8fd3f4 100%
+    ); /* copied from webgradients.com */
     justify-content: center;
-  
-  }
-  .header{
-    text-align: center;
-    font-family: 'Montserrat',sans-serif;
-    color:grey;
-    font-weight:600;
-    letter-spacing: 1px;
-    font-size: 50px;
-    margin-top: 20px;
-  
   }
   
-  .search-form{
-    min-height: 15vh;
+  .search-form {
+    min-height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  .search-bar{
-    width: 300px;
-    border: 2px solid #f4f4f4; 
-    padding: 10px; 
-    padding-left: 40px;
-    border-radius: 40px;
-    background-color: #f4f4f4;
-    outline: none;
-    background-image: url("../images/searchicon.png");
-    background-repeat: no-repeat;
-    background-position: 10px;
-    margin: auto;  
+  .search-bar {
+    width: 40%;
+    border: 3px solid black;
+    padding: 15px;
   }
   
-  .search-button{
+  .search-button {
     background: #8fd3f4;
     border: 1px solid black;
-    color:black; /*color of the text*/
+    color: black; /*color of the text*/
     width: 100px;
   }
   
-  .meal{ /*this will work as my container*/
-    display:flex;
+  .meal {
+    /*this will work as my container*/
+    display: flex;
     border: 10px solid black;
     flex-direction: row;
     justify-content: space-around;
