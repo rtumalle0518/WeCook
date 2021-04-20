@@ -19,8 +19,8 @@
 	object-fit: cover;
 	display: block;
 	/* border-top: 2px solid #333333;
-    border-right: 2px solid #333333;
-    border-left: 2px solid #333333; */
+	border-right: 2px solid #333333;
+	border-left: 2px solid #333333; */
 }
 
 .cardcontent {
@@ -29,7 +29,7 @@
 	padding: 15px;
 	background: #fafafa;
 	/* border-right: 2px solid #333333;
-    border-left: 2px solid #333333; */
+	border-left: 2px solid #333333; */
 	width: 250px;
 }
 
@@ -51,8 +51,8 @@
 	font-size: 0.8em;
 	width: 250px;
 	/* border-bottom: 2px solid #333333;
-    border-right: 2px solid #333333;
-    border-left: 2px solid #333333; */
+	border-right: 2px solid #333333;
+	border-left: 2px solid #333333; */
 }
 
 .cardlink {
@@ -80,7 +80,7 @@
 	border-radius: 40px;
 	background-color: #f4f4f4;
 	outline: none;
-	/* background-image: url("../images/searchicon.png"); */
+
 	background-repeat: no-repeat;
 	background-position: 10px;
 }
@@ -120,10 +120,10 @@ ul {
 	grid-auto-rows: auto;
 
 	/* grid-gap: 30px;
-      margin: 30px;
-      grid-template-columns: 40px auto auto auto;
-      grid-template-rows: auto auto auto auto;
-      width: 200px;
-      height: 200px;
-      background-color:grey; */
+	  margin: 30px;
+	  grid-template-columns: 40px auto auto auto;
+	  grid-template-rows: auto auto auto auto;
+	  width: 200px;
+	  height: 200px;
+	  background-color:grey; */
 }
