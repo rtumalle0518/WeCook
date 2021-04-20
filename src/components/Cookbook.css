@@ -80,7 +80,7 @@
 	border-radius: 40px;
 	background-color: #f4f4f4;
 	outline: none;
-	background-image: url("../images/searchicon.png");
+	/* background-image: url("../images/searchicon.png"); */
 	background-repeat: no-repeat;
 	background-position: 10px;
 }
