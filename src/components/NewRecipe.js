@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import UserContext from "../contexts/UserContext";
 import { useAuth } from "../contexts/AuthContext";
 import { firestore } from "../firebase";
 
