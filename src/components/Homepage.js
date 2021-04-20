@@ -24,27 +24,28 @@ export default function Homepage() {
                 </p>
             </p>
             </div>
-                    <div className="Foodpics">
+                    <div className="flex-container">
+                        
                     <img
                         src={foodovals}
                         alt="Three pictures of food in ovals"
-                        style={{width:400 , height:400, position: 'relative', top:-280, left:900 }}
+                        style={{width:400 , height:400, position: 'absolute', top:80, left:900 }}
                     />  
                     
-                         <div className="Testimony1">
+                        
                         <img 
                         src={testimony1}
                         alt="Testimony1 of user"
-                        style={{width:200, height:124.21, position: 'relative', top:-320 , left:500}}
+                        style={{width:200, height:124.21, position: 'relative', top:80 , left:500}}
                         />
-                        <div className="Testimony2">
+                        
                             <img
                             src={testimony2}
                             alt="Testimony2 of user"
-                            style={{width:200, height:124.21, position: 'relative', top: -380 , left:100}}
+                            style={{width:200, height:124.21, position: 'relative', top:10 , left:100}}
                             />
-                        </div>
-                        </div>
+                        
+                        
                     </div>
                     <Footer></Footer>
         

@@ -6,9 +6,6 @@
     left:40px;
     top:35px;
     max-width: 600px;
-
-    
-
 }
 .secondtext{
     font-weight:800;
@@ -38,4 +35,12 @@
 }
 .bold{
     font-weight:700 ;
+}
+.flex-container{
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+}
+img{
+    object-fit: scale-down;
 }

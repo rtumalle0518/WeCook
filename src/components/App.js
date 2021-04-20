@@ -9,6 +9,8 @@ import Recipe from "./Recipe";
 import Homepage from "./Homepage";
 import Survey from "./Survey";
 import textbox from "./textbox";
+import Cookbook from "./Cookbook";
+
 function App() {
   return (
     <div>
@@ -23,6 +25,7 @@ function App() {
             <Route path = "/recipe" component={Recipe}/> 
             <Route path = "/survey" component={Survey}/> 
             <Route path="/textbox" component={textbox} />
+            <Route path="/Cookbook" component={Cookbook} />
           </Switch>
         </AuthProvider>
       </Router>

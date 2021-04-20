@@ -59,21 +59,19 @@ export default function Recipe() {
     return(
             <div className = "App">
                 <NavigationBar></NavigationBar>
+                <h1 className="header">CookBook</h1>
                 <form onSubmit={getSearch} className="search-form"> 
-                    <input className="search-bar" type="text" value={search} onChange={updateSearch} />
-                    <button className="search-button" type= "submit">
-                        Search 
-                    </button> 
+                    <input className="search-bar" type="text" placeholder="Search" value={search} onChange={updateSearch} />
                 </form>
 
                 <div className = "meal">
 
                     {recipes.map(recipe =>(
                         <RecipeCard 
+                        image={recipe.recipe.image}
                         key={recipe.recipe.label}
                         title ={recipe.recipe.label} 
                         calories={recipe.recipe.calories}
-                        image={recipe.recipe.image}
                         ingredients={recipe.recipe.ingredients}
                         />
                     ))}

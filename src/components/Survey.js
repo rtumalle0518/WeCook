@@ -18,13 +18,13 @@ class Survey extends Component {
     answerSelected(event){
         var answers = this.state.answers;
 
-        if(event.target.name == 'ans1'){
+        if(event.target.name === 'ans1'){
             answers.ans1 = event.target.value;
         }
-        else if(event.target.name == 'ans2'){
+        else if(event.target.name === 'ans2'){
             answers.ans2 = event.target.value;
         }
-        else if(event.target.name == 'ans3'){
+        else if(event.target.name === 'ans3'){
             answers.ans3 = event.target.value;
         }
         else if(event.target.name == 'ans4'){
