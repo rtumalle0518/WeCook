@@ -4,6 +4,8 @@ import placehold from '../images/placeholder-image.png';
 import thumbup from '../images/thumbup.png';
 import thumbdown from '../images/thumbdown.png';
 import "./Cookbook.css"
+import Truncate from 'react-truncate';
+import Footer from './Footer'
 
 export default function CookBook(){
      //below we define the useStates
@@ -24,7 +26,6 @@ export default function CookBook(){
          const data = await response.json(); //this will format the data in a way that makes it easy to work with
          setRecipes(data.hits);
          console.log(data.hits)
-       
      }
      const updateSearch = e => { //creating an event that happens on click/change to access the target 
          setSearch(e.target.value); //the value of the input
@@ -35,30 +36,29 @@ export default function CookBook(){
          setSearch(''); //after search, set our search back to empty string
      }
  
-     const RecipeCard = ({title, calories, image, ingredients}) => {
+     const RecipeCard = ({title, calories, image, ingredients,url}) => {
  
          const round = Math.round(calories);
     
     return(
         <div className="rcard">
             {/* <div className="rcard"> */}
-                <img  src={placehold} 
+                <img  src={image} 
                 alt="Food"
                 className="cardimage">
                 </img>
                 <div className="cardcontent">
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis urna metus
+                        <Truncate lines={2} ellipsis={<span>...</span>}>
+                        {title}
+                        </Truncate>
+                    
                     </p>
                     <p>Calories: {round} </p>
                 </div>
                 <div className="cardinfo">
-                    <div>
-                        <img src={thumbup}alt="thumpup"></img>
-                        <img src={thumbdown}alt="thumpup"></img>
-                    </div>
                     <div className="cardlink">
-                        <a href="./" className="recipelink">View Recipe
+                        <a href={url} className="recipelink" target="_blank">View Recipe
                         </a>
                     </div>
                 </div>
@@ -81,18 +81,19 @@ export default function CookBook(){
             <div className="maincontainer">
             <div className="SideBar">
             <ul>
-                <li>Appetizers</li>
-                <li>Breakfast</li>
-                <li>Chicken Recipes</li>
-                <li>Dinner</li>
-                <li>Dessert</li>
-                <li>Lunch</li>
-                <li>Pizza</li>
-                <li>Salads</li>
-                <li>Soups</li>
+                <li onClick={() => setQuery("appetizer")}>Appetizers</li>
+                <li onClick={() => setQuery("breakfast")}>Breakfast</li>
+                <li onClick={() => setQuery("chicken")}>Chicken</li>
+                <li onClick={() => setQuery("dinner")}>Dinner</li>
+                <li onClick={() => setQuery("dessert")}>Dessert</li>
+                <li onClick={() => setQuery("lunch")}>Lunch</li>
+                <li onClick={() => setQuery("pizza")}>Pizza</li>
+                <li onClick={() => setQuery("salads")}>Salads</li>
+                <li onClick={() => setQuery("soups")}>Soups</li>
+            
             </ul>
             </div>
-            <div className="container-1">
+            <div className="container1">
             {recipes.map(recipe =>(
                         <RecipeCard 
                         image={recipe.recipe.image}
@@ -100,17 +101,12 @@ export default function CookBook(){
                         title ={recipe.recipe.label} 
                         calories={recipe.recipe.calories}
                         ingredients={recipe.recipe.ingredients}
+                        url={recipe.recipe.url}
                         />
                     ))}
-            {/* <div class="item2">Pic1</div>
-            <div class="item3">Pic2</div>  
-            <div class="item4">Pic3</div>
-            <div class="item5">Pic4</div>
-            <div class="item6">Pic5</div>
-            <div class="item7">Pic6</div> */}
             </div>
             </div>
-         
+         <Footer></Footer>
      </div>
  )   
 }

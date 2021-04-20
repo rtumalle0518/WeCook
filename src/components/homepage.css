@@ -1,3 +1,7 @@
+.MContain{
+    display: flex;
+    flex-direction: row;
+}
 .words{
     font-family: 'Montserrat',sans-serif;
     font-size: large;
@@ -37,10 +41,27 @@
     font-weight:700 ;
 }
 .flex-container{
-   display: flex;
+   /* display: inline-block;
+   padding-top:30px ;
+    margin:auto; */
+   
+   display:flex; 
    flex-wrap: wrap;
-   flex-direction: column;
+   margin-left:100px;
 }
-img{
-    object-fit: scale-down;
+@media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }}
+.foodoval{
+    height: 500px;
+    padding:30px;
+    margin:40px;
+    flex-shrink: inherit;
+}
+.test1{
+    margin:auto;
+}
+.test2{
+
 }

@@ -3,18 +3,19 @@
   flex-direction: row;
 }
 .rcard{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: auto;
-  /* gap: 20px; */
   font-family:'Montserrat',sans-serif;
-  padding: 30px;
+  /* padding: 30px; */
   margin: 10px;
-  width:200px;
+  max-width:251px;
+  max-height: 301px;
+  min-width: 250px;
+  min-height: 300px;
+  /* max-width:20%; */
+
  }
 
 .cardimage {
-  width: 100%;
+  width: 250px;
   height: 150px;
   object-fit: cover;
   display: block;
@@ -30,6 +31,7 @@
   background: #fafafa;
   /* border-right: 2px solid #333333;
   border-left: 2px solid #333333; */
+  width: 250px;
 }
 
 .cardcontent > p:first-of-type {
@@ -48,6 +50,7 @@
   color: #555555;
   background: #eeeeee;
   font-size: 0.8em;
+  width: 250px;
   /* border-bottom: 2px solid #333333;
   border-right: 2px solid #333333;
   border-left: 2px solid #333333; */
@@ -80,14 +83,12 @@
     outline:none;
     background-image: url("../images/searchicon.png");
     background-repeat: no-repeat;
-    background-position: 10px;  
-    
+    background-position: 10px;   
   }
   form{
     display: inline-block !important;
     padding-top:30px ;
-    margin:auto;
-    width: 40%;
+    margin-left: 100px;
   }
   .Search-Form{
     min-height: 15vh;
@@ -111,11 +112,16 @@
     font-family: 'Montserrat',sans-serif;
     color:grey;
     letter-spacing: 1px;
-    margin: 20px;
+    margin: 10px;
     list-style-type: none;
+    cursor:pointer;
   }
-.container-1 div{
-    display:inline-block;
+.container1 div{
+    /* display:inline-block; */
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: auto;
+    
     /* grid-gap: 30px;
     margin: 30px;
     grid-template-columns: 40px auto auto auto;
