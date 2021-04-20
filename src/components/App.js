@@ -31,6 +31,7 @@ function App() {
 						<Route path="/newrecipe" component={NewRecipe} />
 						<Route path="/textbox" component={textbox} />
 						<Route path="/meal-plan" component={Plan} />
+						<Route path="/*" component={notFoundPage} />
 					</Switch>
 				</AuthProvider>
 			</Router>
