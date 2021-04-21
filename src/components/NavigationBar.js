@@ -23,7 +23,7 @@ export default function NavigationBar() {
         return (
             <>
                 <Navbar sticky="top" bg="light">
-                    <Navbar.Brand href="WeCook" style={{ width: "calc(100%/7)" }}>
+                    <Navbar.Brand href="WeCook" style={{ width: "auto" }}>
                         <img
                             src={logo}
                             width="175"
@@ -51,14 +51,14 @@ export default function NavigationBar() {
     return (
         <>
             <Navbar sticky="top" bg="light">
-                <Navbar.Brand href="WeCook" style={{ width: "calc(100%/7)" }}>
+                <Navbar.Brand href="WeCook" style={{ width: "auto" }}>
                     <img
                         src={logo}
                         width="175"
                         height="40" 
                         className="d-inline-block align-top"
                         alt="We Cook Logo"
-                    />    
+                    />   
                 </Navbar.Brand>
                 <Nav className="mr-auto"> 
                     <Nav.Link href="/recipe">Recipes</Nav.Link>
