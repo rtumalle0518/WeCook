@@ -36,6 +36,8 @@ export default function NavigationBar() {
                         <Nav.Link href="/recipe">Recipes</Nav.Link>
                         <Nav.Link href="/survey">Survey</Nav.Link>
                         <Nav.Link href="/textbox">textbox</Nav.Link>
+                        <Nav.Link href="/userSurvey">User Survey</Nav.Link>
+                        <Nav.Link href="/userInfo">User Info</Nav.Link>
                     </Nav>
                     
                     <Nav className="ml-auto">
@@ -63,6 +65,8 @@ export default function NavigationBar() {
                     {/*Comment off line below to get rid of survey button if user is not logged in*/}
                     <Nav.Link href="/survey">Survey</Nav.Link>
                     <Nav.Link href="/textbox">textbox</Nav.Link>
+                    <Nav.Link href="/userSurvey">User Survey</Nav.Link>
+                    <Nav.Link href="/userInfo">User Info</Nav.Link>
                 </Nav>
                 
                 <Nav className="ml-auto">
