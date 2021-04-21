@@ -33,7 +33,7 @@ export default function ForgotPassword() {
                     <h2 className="text-center mb-4">Password Reset</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
                     {message && <Alert variant="success">{message}</Alert>}
-                    <Form onSubmit={handleSubmit} style={{ marginLeft: "30px", marginRight: "30px" }}>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
                             <Form.Label>Email</Form.Label>
                             <Form.Control type="email" ref={emailRef} required/>
