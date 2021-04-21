@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Form, Button} from 'react-bootstrap'
-import { useAuth } from "../contexts/AuthContext";
-import { firestore } from "../firebase";
+import { firestore, auth } from "../firebase";
 import { useHistory } from "react-router-dom";
 import { Formik, Field} from 'formik';
 import * as yup from 'yup'
@@ -12,7 +11,11 @@ export default function NewRecipe() {
   // const [ingredients, setIngredients] = useState("");
   // const [directions, setDirections] = useState("");
   // const [validated, setValidated] = useState(false);
-  const { currentUser, goToLogin } = useAuth();
+  const user = auth.currentUser
+  const history = useHistory();
+  if(!user){
+    history.push("/login");
+  }
 
   const schema = yup.object().shape({
     title: yup.string().min(1, 'Must be 1 character or more').required(),
@@ -43,6 +46,7 @@ export default function NewRecipe() {
               description: values.description,
               ingredients: ingredientsArray,
               directions: directionsArray,
+              userid:user.email,
             });
 
           console.log(values)
