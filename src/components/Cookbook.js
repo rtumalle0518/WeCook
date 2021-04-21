@@ -84,7 +84,6 @@ export default function CookBook() {
 						<li onClick={() => setQuery("appetizer")}>Appetizers</li>
 						<li onClick={() => setQuery("breakfast")}>Breakfast</li>
 						<li onClick={() => setQuery("chicken")}>Chicken</li>
-						<li onClick={() => setQuery("dinner")}>Dinner</li>
 						<li onClick={() => setQuery("dessert")}>Dessert</li>
 						<li onClick={() => setQuery("lunch")}>Lunch</li>
 						<li onClick={() => setQuery("pizza")}>Pizza</li>
