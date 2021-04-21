@@ -8,12 +8,13 @@ import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./ForgotPassword";
 import Recipe from "./Recipe";
 import Homepage from "./Homepage";
-// import Survey from "./Survey";
+import userSurvey from "./userSurvey";
 import textbox from "./textbox";
 import notFoundPage from "./notFoundPage";
 import NewRecipe from "./NewRecipe";
 import Survey from "./page/Survey";
 import Plan from "./page/Plan";
+import userInfo from "./userInfo";
 import CookBook from "./Cookbook";
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
 						<Route path="/newrecipe" component={NewRecipe} />
 						<Route path="/textbox" component={textbox} />
 						<Route path="/meal-plan" component={Plan} />
+						<Route path="/userSurvey" component={userSurvey} />
+						<Route path="/userInfo" component={userInfo} />
 						<Route path="/cookbook" component={CookBook} />
 					</Switch>
 				</AuthProvider>
