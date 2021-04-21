@@ -15,6 +15,7 @@ import NewRecipe from "./NewRecipe";
 import Survey from "./page/Survey";
 import Plan from "./page/Plan";
 import userInfo from "./userInfo";
+import CookBook from "./Cookbook";
 
 function App() {
 	return (
@@ -34,6 +35,7 @@ function App() {
 						<Route path="/meal-plan" component={Plan} />
 						<Route path="/userSurvey" component={userSurvey} />
 						<Route path="/userInfo" component={userInfo} />
+						<Route path="/cookbook" component={CookBook} />
 					</Switch>
 				</AuthProvider>
 			</Router>
