@@ -5,7 +5,22 @@ import  './homepage.css';
 import foodovals from '../images/Foodovals.png';
 import testimony1 from '../images/Testimony1.png';
 import testimony2 from '../images/Testimony2.png';
+import firebase from '../firebase';
+var user = firebase.auth().currentUser;
+var name, uid;
 
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        if (user != null) {
+            name = user.displayName;
+            uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                             // this value to authenticate with your backend server, if
+                             // you have one. Use User.getToken() instead.
+          }
+    } else {
+      // No user is signed in.
+    }
+  });
 
 export default function Homepage() {
     return (
@@ -13,7 +28,7 @@ export default function Homepage() {
             <NavigationBar></NavigationBar>
             <div className="words">
             <p>
-                Welcome back!
+                Welcome back {name}!
                 <h3 className="secondtext">Let's eat some
                 <span className="colourtext"> HEALTHY </span> Food
                 </h3>
