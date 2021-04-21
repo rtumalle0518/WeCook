@@ -7,11 +7,11 @@ import { Formik, Field} from 'formik';
 import * as yup from 'yup'
 
 export default function NewRecipe() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [ingredients, setIngredients] = useState("");
-  const [directions, setDirections] = useState("");
-  const [validated, setValidated] = useState(false);
+  // const [title, setTitle] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [ingredients, setIngredients] = useState("");
+  // const [directions, setDirections] = useState("");
+  // const [validated, setValidated] = useState(false);
   const { currentUser, goToLogin } = useAuth();
 
   const schema = yup.object().shape({
@@ -30,10 +30,11 @@ export default function NewRecipe() {
           ingredients: '',
           directions: '',
         }}
+
         onSubmit={(values, onSubmitProps) => {
           onSubmitProps.setSubmitting(true);
           const ingredientsArray = values.ingredients.split("\n");
-          const directionsArray = values.directions.split("\n")
+          const directionsArray = values.directions.split(",")
 
           firestore
             .collection("recipes")
@@ -44,11 +45,6 @@ export default function NewRecipe() {
               directions: directionsArray,
             });
 
-          setTitle("");
-          setIngredients("");
-          setDescription("");
-          setDirections("");
-          //put the firebase async call here
           console.log(values)
           onSubmitProps.setSubmitting(false);
           onSubmitProps.resetForm();
@@ -98,7 +94,7 @@ export default function NewRecipe() {
               name="ingredients"
               rows={5} 
               value={values.ingredients}
-              placeholder="Enter ingredients of recipe"
+              placeholder="Enter ingredients of recipe seperated by lines"
               onChange={handleChange}
               onBlur={handleBlur}
               isValid={touched.ingredients && !errors.ingredients}
@@ -115,7 +111,7 @@ export default function NewRecipe() {
               name="directions"
               rows={5} 
               value={values.directions}
-              placeholder="Enter directions of recipe seperated by lines"
+              placeholder="Enter directions of recipe seperated by commas"
               onChange={handleChange}
               onBlur={handleBlur}
               isValid={touched.directions && !errors.directions}
@@ -127,41 +123,10 @@ export default function NewRecipe() {
           </Form.Group>
 
           <Button disabled={isSubmitting} type="submit">Submit Recipe!</Button>
-          <pre>{JSON.stringify(values, null, 2)}</pre>
+          {/*For testing purposes: <pre>{JSON.stringify(values, null, 2)}</pre> */}
         </Form>
         )}
       </Formik>
     </>
-
-      // <div className="new-recipe">
-      //   <h1>New recipe</h1>
-      //   <form>
-      //     <input
-      //       type="text"
-      //       placeholder="Recipe Title"
-      //       value={title}
-      //       onChange={(e) => setTitle(e.target.value)}
-      //       required
-      //     />
-      //     <textarea
-      //       placeholder="Description"
-      //       value={description}
-      //       onChange={(e) => setDescription(e.target.value)}
-      //     />
-      //     <textarea
-      //       type="text"
-      //       placeholder="Ingredients separated by comma"
-      //       value={ingredients}
-      //       onChange={(e) => setIngredients(e.target.value)}
-      //       required
-      //     />
-      //     <textarea
-      //       placeholder="Directions seperated by line"
-      //       value={directions}
-      //       required
-      //     />
-      //     <button onClick={saveRecipe}>Save recipe</button>
-      //   </form>
-      // </div>
   );
 };
