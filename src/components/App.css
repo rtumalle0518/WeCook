@@ -327,3 +327,13 @@ li {
 	list-style-type: none;
 	margin: 0.4rem 0;
 }
+.new-recipe{
+	font-size: 70px;
+	font-family:  'Architects Daughter', cursive;
+    color: rgb(255, 145, 0);
+}
+.descript{
+	font-size: 70px;
+	font-family:  'Architects Daughter', cursive;
+    color: orange;
+}

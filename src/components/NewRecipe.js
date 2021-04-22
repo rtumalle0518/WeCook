@@ -3,6 +3,10 @@ import { Form, Button} from 'react-bootstrap'
 import { firestore, auth } from "../firebase";
 import { useHistory } from "react-router-dom";
 import { Formik, Field} from 'formik';
+import NavigationBar from './NavigationBar';
+import {StyledContainer} from './Styles.js';
+import { StyledTitle, StyledSubTitle } from "./Styles.js";
+import  './App.css';
 import * as yup from 'yup'
 
 export default function NewRecipe() {
@@ -26,14 +30,15 @@ export default function NewRecipe() {
 
   return (
     <>
-      <Formik
+    <NavigationBar></NavigationBar>
+    <StyledContainer>
+      <Formik style = {{textAlign: 'center'}}
         initialValues={{
           title: '',
           description: '',
           ingredients: '',
           directions: '',
         }}
-
         onSubmit={(values, onSubmitProps) => {
           onSubmitProps.setSubmitting(true);
           const ingredientsArray = values.ingredients.split("\n");
@@ -65,11 +70,20 @@ export default function NewRecipe() {
           handleChange,
           handleBlur,
         }) => (
-        <Form onSubmit={handleSubmit}>
-
+        <Form style = {{textAlign: 'center'}} onSubmit={handleSubmit}>
+          <div>
+            <div></div> 
+            <StyledTitle size={65}>
+              Creating Your Recipe!
+              </StyledTitle>
+              <StyledSubTitle size={27}>
+                Scroll Down to Learn More!
+              </StyledSubTitle></div>
+          <h1 style = {{textAlign: 'center'}} className='new-recipe'>Creating Your Recipe!</h1>
           <Form.Group controlId="validationTitle">
             <Form.Label>Recipe Title</Form.Label>
-            <Field placeholder="Enter recipe title" name="title" type="input" as={Form.Control} isValid={touched.title && !errors.title} isInvalid={!!errors.title}/>
+            <Field placeholder="Enter Recipe Title" name="title"
+              type="input" as={Form.Control} isValid={touched.title && !errors.title} isInvalid={!!errors.title}/>
             <Form.Control.Feedback type="invalid">
               {errors.title}
             </Form.Control.Feedback>
@@ -78,10 +92,11 @@ export default function NewRecipe() {
           <Form.Group controlId="validationDescription">
             <Form.Label>Description</Form.Label>
             <Form.Control as="textarea"
+            className="descrip"
               name="description"
               rows={5} 
               value={values.description}
-              placeholder="Enter description of recipe"
+              placeholder="Enter Description of Recipe"
               onChange={handleChange}
               onBlur={handleBlur}
               isValid={touched.description && !errors.description}
@@ -98,7 +113,7 @@ export default function NewRecipe() {
               name="ingredients"
               rows={5} 
               value={values.ingredients}
-              placeholder="Enter ingredients of recipe seperated by lines"
+              placeholder="Enter Ingredients of Recipe (Seperated by Commas)"
               onChange={handleChange}
               onBlur={handleBlur}
               isValid={touched.ingredients && !errors.ingredients}
@@ -115,7 +130,7 @@ export default function NewRecipe() {
               name="directions"
               rows={5} 
               value={values.directions}
-              placeholder="Enter directions of recipe seperated by commas"
+              placeholder="Enter Directions of Recipe (Seperated by Commas)"
               onChange={handleChange}
               onBlur={handleBlur}
               isValid={touched.directions && !errors.directions}
@@ -131,6 +146,7 @@ export default function NewRecipe() {
         </Form>
         )}
       </Formik>
+      </StyledContainer> 
     </>
   );
 };
