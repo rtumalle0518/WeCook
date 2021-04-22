@@ -1,0 +1,156 @@
+
+
+.body1 {
+    background: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://images.pexels.com/photos/1910225/pexels-photo-1910225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 1px 3px 5px rgba(0,0,0,0.6);
+}
+p.sub-title1{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+#contact-container{
+    width: 1200px;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 10px;
+	display: flex;
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,.2);
+    box-shadow: -2px 22px 61px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -2px 22px 61px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 22px 61px -10px rgba(0,0,0,0.75);
+    .contact-info{
+        background-color: #6d04c2;
+        flex: 0 1 40%;
+        border-radius: 15px;
+        padding: 40px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(255,255,255,.2);
+    box-shadow: -2px 22px 61px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -2px 22px 61px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 22px 61px -10px rgba(0,0,0,0.75);
+        h4{
+            font-size: 2rem;
+            font-weight: 500;
+            margin-top: 0;
+        }
+        p{
+            color: rgba(255, 255, 255,.6) ;
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+        .icon-text{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 2rem;
+            .fa{
+                flex: 0 0 20%
+            }
+            span{
+                font-size: 1.3rem;
+                font-weight: 300;
+
+            }
+        }
+
+    }
+    form{
+        padding: 40px;
+        width: 100%;
+        .col{
+            display: flex;
+            width: 100%;
+            flex: 0 0 100%;
+        }
+        .form-group{
+            display: inline-flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            flex: 0 1 100%;
+            padding-right: 40px;
+            
+            label{
+                font-size: .9rem;
+                color: rgba(255,255,255,.6);
+                margin-bottom: 2rem;
+            }
+            input[type="text"], input[type="tel"], input[type="email"], textarea{
+               // background: rgba(255,255,255,.2);
+                border: none;
+                cursor: pointer;
+                border-bottom: #05f7ff;
+                padding: 10px;
+                font-size: 1.5rem;
+                font-weight: 300;
+                color: white;
+                background: transparent;
+                border-bottom: 2px solid rgba(255,255,255,.4);
+                transition: all .3s ease-in-out;
+                margin-bottom: 2rem;
+                &:focus{
+                    border: none;
+                    outline: none;
+                    border-bottom: 2px solid #05f7ff;
+
+                }
+
+
+            }
+            &:nth-last-child(2){
+                padding-right: 75px;
+            }
+            #radio-buttons{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+                .radio-button{
+                    margin-right: 20px;
+                }
+                label{
+                    font-size:1.3rem;
+                }
+                input[type="radio"]:checked + label{
+                    color: white;
+                }
+
+
+            }
+            &.solo{
+                padding: none;
+            }
+            &.right{
+                align-items: flex-end;
+            }
+            button{
+                width: 200px;
+                height: 60px;
+                cursor:pointer;
+                background: white;
+                border: none;
+                text-transform: uppercase;
+                border-radius: 10px;
+
+            }
+        }
+    }
+}
+
