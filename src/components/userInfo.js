@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react';
 import Box from '@material-ui/core/Box';
 import PersonIcon from '@material-ui/icons/Person';
 import Avatar from '@material-ui/core/Avatar';
 import firebase from '../firebase';
 import NavigationBar from './NavigationBar'
 import { Form, Button, Card, Alert, Container} from "react-bootstrap"
-//import {firestore} from "../firebase";
+import {firestore} from "../firebase";
 var database = firebase.database();
 var name, email, photoUrl, uid, emailVerified, diet, dietGoal, age, height, weight, weightGoal, gender, test;
 firebase.auth().onAuthStateChanged(function(user) {
@@ -68,7 +68,27 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   });
 
-export const userInfo = () => {
+export const UserInfo = () => {
+    const [user, setUser] = useState([]);
+    const ref = firestore.collection("userSurvey").doc(uid);
+    function getData (){
+        ref.get().then((doc) => {
+            if (doc.exists) {
+                const items = doc.data().answers;
+                setUser(items)
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+            }).catch((error) => {
+                console.log("Error getting document:", error);
+            });
+    }
+    useEffect(()=> {
+        getData();
+    }, []);
+    const metabolism = user.gender == "Male" ? Math.round(66.47 + (6.24 * user.weight) + (12.7 * user.height) - (6.755 * user.age)) : Math.round(655.1  + (4.35 * user.weight) + (4.7 * user.height) - (4.7 * user.age));
+    const height = Math.round((user.height/12) * 10) / 10;
     return (
         <div>
             <NavigationBar></NavigationBar>
@@ -83,13 +103,14 @@ export const userInfo = () => {
                             </Box>
                             <Box color="primary.main" pt={7}fontSize={57} fontWeight="fontWeightBold"> User information</Box>
                             <Box color="primary.main" pt={3}> Name: {name}</Box>
-                            <Box color="primary.main" pt={1}> Age: {age} years</Box>
-                            <Box color="primary.main" pt={1}> Gender: {gender}</Box>
-                            <Box color="primary.main" pt={1}> Diet: {diet}</Box>
-                            <Box color="primary.main" pt={1}> Diet goal: {dietGoal}</Box>
-                            <Box color="primary.main" pt={1}> Height: {height} inches</Box>
-                            <Box color="primary.main" pt={1}> Weight: {weight}</Box>
-                            <Box color="primary.main" pt={1}> Weight goal: {weightGoal}</Box> 
+                            <Box color="primary.main" pt={1}> Age: {user.age} years</Box>
+                            <Box color="primary.main" pt={1}> Gender: {user.gender}</Box>
+                            <Box color="primary.main" pt={1}> Diet: {user.diet}</Box>
+                            <Box color="primary.main" pt={1}> Diet goal: {user.dietGoal}</Box>
+                            <Box color="primary.main" pt={1}> Height: {height} feet</Box>
+                            <Box color="primary.main" pt={1}> Weight: {user.weight} pounds</Box>
+                            <Box color="primary.main" pt={1}> Weight goal: {user.weightGoal}</Box> 
+                            <Box color="primary.main" pt={1}> Estimated metabalism: {metabolism} calories</Box> 
                         </div>
                     </Box>
                 </Card>
@@ -98,4 +119,4 @@ export const userInfo = () => {
     )
 }
 
-export default userInfo;
+export default UserInfo;

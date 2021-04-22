@@ -132,7 +132,7 @@ class Survey extends Component {
                 </div>
                 <div className="card">
                     <label>What is your height in inches?</label>
-                    <TextField required InputProps={{ inputProps: { min: 1, max: 300 } }} type = "number" placeholder = "70" name = "height" variant = "outlined" onChange={this.answerSelected}></TextField>
+                    <TextField required InputProps={{ inputProps: { min: 1, max: 96 } }} type = "number" placeholder = "70" name = "height" variant = "outlined" onChange={this.answerSelected}></TextField>
                 </div>
 
                 <div className="card">
