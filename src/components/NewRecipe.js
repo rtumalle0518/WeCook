@@ -17,15 +17,30 @@ export default function NewRecipe() {
   // const [validated, setValidated] = useState(false);
   const user = auth.currentUser
   const history = useHistory();
+  const SUPPORTED_FORMATS = [ 
+    "image/jpg",
+    "image/jpeg",
+    "image/png"
+  ];
+
   if(!user){
     history.push("/login");
   }
+
 
   const schema = yup.object().shape({
     title: yup.string().min(1, 'Must be 1 character or more').required(),
     description: yup.string().required(),
     ingredients: yup.string().required(),
     directions: yup.string().required(),
+    file: yup
+          .mixed()
+          .required("A file is required")
+          .test("FILE_SIZE", "Uploaded file is too big.", 
+            value => !value || (value && value.size <= FILE_SIZE))
+          .test("FILE_FORMAT", "Uploaded file has unsupported format.", 
+            value => !value || (value && SUPPORTED_FORMATS.includes(value.type)))
+
   });
 
   return (
@@ -38,6 +53,7 @@ export default function NewRecipe() {
           description: '',
           ingredients: '',
           directions: '',
+          file: undefined,
         }}
         onSubmit={(values, onSubmitProps) => {
           onSubmitProps.setSubmitting(true);
@@ -69,6 +85,7 @@ export default function NewRecipe() {
           handleSubmit,
           handleChange,
           handleBlur,
+          setFieldValue,
         }) => (
         <Form style = {{textAlign: 'center'}} onSubmit={handleSubmit}>
           <div>
@@ -113,7 +130,7 @@ export default function NewRecipe() {
               name="ingredients"
               rows={5} 
               value={values.ingredients}
-              placeholder="Enter Ingredients of Recipe (Seperated by Commas)"
+              placeholder="Enter Ingredients of Recipe (Seperated by Lines)"
               onChange={handleChange}
               onBlur={handleBlur}
               isValid={touched.ingredients && !errors.ingredients}
@@ -140,9 +157,21 @@ export default function NewRecipe() {
              {errors.directions}
             </Form.Control.Feedback>
           </Form.Group>
-
+          
+          <Form.Group controlId= "validationFile">
+            <Field
+              name="file" 
+              type="file" 
+              as={Form.File}
+              isValid={touched.file && !errors.file}
+              isInvalid={!!errors.file} 
+            />
+            <Form.Control.Feedback type="invalid">
+             {errors.file}
+            </Form.Control.Feedback>
+          </Form.Group>
           <Button disabled={isSubmitting} type="submit">Submit Recipe!</Button>
-          {/*For testing purposes: <pre>{JSON.stringify(values, null, 2)}</pre> */}
+          <pre>{JSON.stringify(values, null, 2)}</pre>
         </Form>
         )}
       </Formik>
