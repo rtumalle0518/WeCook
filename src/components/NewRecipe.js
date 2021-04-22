@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
-import { Form, Button} from 'react-bootstrap'
+import { Form, Button} from 'react-bootstrap';
+import firebase from 'firebase/app';
 import { firestore, auth } from "../firebase";
 import { useHistory } from "react-router-dom";
 import { Formik, Field} from 'formik';
@@ -10,18 +11,13 @@ import  './App.css';
 import * as yup from 'yup'
 
 export default function NewRecipe() {
-  // const [title, setTitle] = useState("");
-  // const [description, setDescription] = useState("");
-  // const [ingredients, setIngredients] = useState("");
-  // const [directions, setDirections] = useState("");
-  // const [validated, setValidated] = useState(false);
   const user = auth.currentUser
   const history = useHistory();
-  const SUPPORTED_FORMATS = [ 
-    "image/jpg",
-    "image/jpeg",
-    "image/png"
-  ];
+  // const SUPPORTED_FORMATS = [ 
+  //   "image/jpg",
+  //   "image/jpeg",
+  //   "image/png"
+  // ];
 
   if(!user){
     history.push("/login");
@@ -30,16 +26,18 @@ export default function NewRecipe() {
 
   const schema = yup.object().shape({
     title: yup.string().min(1, 'Must be 1 character or more').required(),
+    servings: yup.number().required(),
+    cookingTime: yup.string().required(),
     description: yup.string().required(),
     ingredients: yup.string().required(),
     directions: yup.string().required(),
-    file: yup
-          .mixed()
-          .required("A file is required")
-          .test("FILE_SIZE", "Uploaded file is too big.", 
-            value => !value || (value && value.size <= FILE_SIZE))
-          .test("FILE_FORMAT", "Uploaded file has unsupported format.", 
-            value => !value || (value && SUPPORTED_FORMATS.includes(value.type)))
+    // file: yup
+    //       .mixed()
+    //       .required("A file is required")
+    //       .test("FILE_SIZE", "Uploaded file is too big.", 
+    //         value => !value || (value && value.size <= FILE_SIZE))
+    //       .test("FILE_FORMAT", "Uploaded file has unsupported format.", 
+    //         value => !value || (value && SUPPORTED_FORMATS.includes(value.type)))
 
   });
 
@@ -53,18 +51,22 @@ export default function NewRecipe() {
           description: '',
           ingredients: '',
           directions: '',
-          file: undefined,
+          servings: '',
+          cookingTime: '',
         }}
         onSubmit={(values, onSubmitProps) => {
           onSubmitProps.setSubmitting(true);
           const ingredientsArray = values.ingredients.split("\n");
-          const directionsArray = values.directions.split(",")
+          const directionsArray = values.directions.split(", ")
 
           firestore
             .collection("recipes")
             .add({
               name: values.title,
               description: values.description,
+              servings: values.servings,
+              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+              cookingTime: values.cookingTime,
               ingredients: ingredientsArray,
               directions: directionsArray,
               userid:user.email,
@@ -87,7 +89,7 @@ export default function NewRecipe() {
           handleBlur,
           setFieldValue,
         }) => (
-        <Form style = {{textAlign: 'center'}} onSubmit={handleSubmit}>
+        <Form style = {{/*textAlign: 'center',*/ marginLeft: '0px'}} onSubmit={handleSubmit}>
           <div>
             <div></div> 
             <StyledTitle size={65}>
@@ -103,6 +105,40 @@ export default function NewRecipe() {
               type="input" as={Form.Control} isValid={touched.title && !errors.title} isInvalid={!!errors.title}/>
             <Form.Control.Feedback type="invalid">
               {errors.title}
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group controlId="validationServings">
+            <Form.Label>Serving Size</Form.Label>
+            <Form.Control 
+              type="text"
+              name="servings" 
+              value={values.servings}
+              placeholder="ex: 4"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              isValid={touched.servings && !errors.servings}
+              isInvalid={!!errors.servings}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.servings}
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group controlId="validationCookingTime">
+            <Form.Label>Cooking Time</Form.Label>
+            <Form.Control 
+              type="text"
+              name="cookingTime" 
+              value={values.cookingTime}
+              placeholder="ex: 1 hr 45 mins"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              isValid={touched.cookingTime && !errors.cookingTime}
+              isInvalid={!!errors.cookingTime}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.cookingTime}
             </Form.Control.Feedback>
           </Form.Group>
 
@@ -158,7 +194,7 @@ export default function NewRecipe() {
             </Form.Control.Feedback>
           </Form.Group>
           
-          <Form.Group controlId= "validationFile">
+          {/* <Form.Group controlId= "validationFile">
             <Field
               name="file" 
               type="file" 
@@ -169,9 +205,13 @@ export default function NewRecipe() {
             <Form.Control.Feedback type="invalid">
              {errors.file}
             </Form.Control.Feedback>
-          </Form.Group>
-          <Button disabled={isSubmitting} type="submit">Submit Recipe!</Button>
-          <pre>{JSON.stringify(values, null, 2)}</pre>
+          </Form.Group> */}
+
+
+          <div className="d-flex justify-content-center align-items-center">
+            <Button disabled={isSubmitting} type="submit">Submit Recipe!</Button>
+          </div>
+          {/* for testing purposes <pre>{JSON.stringify(values, null, 2)}</pre> */}
         </Form>
         )}
       </Formik>
