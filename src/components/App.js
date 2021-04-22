@@ -37,7 +37,7 @@ function App() {
 						<Route path="/userSurvey" component={userSurvey} />
 						<Route path="/userInfo" component={userInfo} />
 						<Route path="/cookbook" component={CookBook} />
-            <Route path="/userrecipes" component={UserRecipe} />
+                        <Route path="/userrecipes" component={UserRecipe} />
 					</Switch>
 				</AuthProvider>
 			</Router>
