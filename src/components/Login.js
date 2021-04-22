@@ -32,7 +32,7 @@ export default function Login() {
                 <Card.Body>
                     <h2 className="text-center mb-4">Log In</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} className="pt-1" style={{ marginLeft: "30px", marginRight: "30px" }}>
                         <Form.Group id="email">
                             <Form.Label>Email</Form.Label>
                             <Form.Control type="email" ref={emailRef} required/>
