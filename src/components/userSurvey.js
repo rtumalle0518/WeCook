@@ -11,8 +11,8 @@ import firebase from '../firebase';
 import {firestore} from "../firebase";
 import NavigationBar from "./NavigationBar";
 import { Link, useHistory } from 'react-router-dom'
+import UploadForm from "./UploadForm";
 var uid;
-
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         if (user != null) {
@@ -185,6 +185,10 @@ class Survey extends Component {
                                 <FormControlLabel name = "dietGoal" value="Other" onClick={this.answerSelected} labelPlacement="top" control={<Radio required />} label="Other" />
                             </RadioGroup>
                     </FormControl>
+                </div>
+                <div className="card">
+                    <label>Upload photo</label>
+                    <UploadForm></UploadForm>
                 </div>
                 <input className = "feedback-button" type="submit" value="submit" />
             </form>
