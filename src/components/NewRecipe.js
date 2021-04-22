@@ -25,12 +25,13 @@ export default function NewRecipe() {
 
 
   const schema = yup.object().shape({
-    title: yup.string().min(1, 'Must be 1 character or more').required(),
-    servings: yup.number().required(),
-    cookingTime: yup.string().required(),
-    description: yup.string().required(),
-    ingredients: yup.string().required(),
-    directions: yup.string().required(),
+    title: yup.string().min(1, 'Must be 1 character or more').required('Please enter a title'),
+    dishType: yup.string().required('Please select a dish type'),
+    servings: yup.number().required('Please enter a number'),
+    cookingTime: yup.string().required('Please enter the cooking time'),
+    description: yup.string().required('Please enter a description'),
+    ingredients: yup.string().required('Please enter the ingredients'),
+    directions: yup.string().required('Please enter the directions'),
     // file: yup
     //       .mixed()
     //       .required("A file is required")
@@ -48,6 +49,7 @@ export default function NewRecipe() {
       <Formik style = {{textAlign: 'center'}}
         initialValues={{
           title: '',
+          dishType: '',
           description: '',
           ingredients: '',
           directions: '',
@@ -61,8 +63,10 @@ export default function NewRecipe() {
 
           firestore
             .collection("recipes")
-            .add({
+            .doc(user.uid)
+            .set({
               name: values.title,
+              dishType: values.dishType,
               description: values.description,
               servings: values.servings,
               createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -108,6 +112,33 @@ export default function NewRecipe() {
             </Form.Control.Feedback>
           </Form.Group>
 
+          <Form.Group>
+            <Form.Label>Dish Type</Form.Label>
+            <Form.Control
+              name="dishType" 
+              value={values.dishType}
+              placeholder="Please Select"
+              as="select"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              custom
+              isValid={touched.dishType && !errors.dishType} 
+              isInvalid={!!errors.dishType}
+              >
+              <option value="">Please Select</option>
+              <option>Main Dish</option>
+              <option>Side Dish</option>
+              <option>Appetizer</option>
+              <option>Soup</option>
+              <option>Salad</option>
+              <option>Dessert</option>
+              <option>Drink</option>
+            </Form.Control>
+            <Form.Control.Feedback type="invalid">
+              {errors.dishType}
+            </Form.Control.Feedback>
+          </Form.Group>
+
           <Form.Group controlId="validationServings">
             <Form.Label>Serving Size</Form.Label>
             <Form.Control 
@@ -145,7 +176,7 @@ export default function NewRecipe() {
           <Form.Group controlId="validationDescription">
             <Form.Label>Description</Form.Label>
             <Form.Control as="textarea"
-            className="descrip"
+              className="descrip"
               name="description"
               rows={5} 
               value={values.description}
@@ -211,7 +242,7 @@ export default function NewRecipe() {
           <div className="d-flex justify-content-center align-items-center">
             <Button disabled={isSubmitting} type="submit">Submit Recipe!</Button>
           </div>
-          {/* for testing purposes <pre>{JSON.stringify(values, null, 2)}</pre> */}
+          <pre>{JSON.stringify(values, null, 2)}</pre>
         </Form>
         )}
       </Formik>
