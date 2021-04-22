@@ -6,8 +6,11 @@ import firebase from '../firebase';
 import NavigationBar from './NavigationBar'
 import { Form, Button, Card, Alert, Container} from "react-bootstrap"
 import {firestore} from "../firebase";
+import UploadForm from "./UploadForm";
+import ImageGrid from "./ImageGrid";
 var database = firebase.database();
 var name, email, photoUrl, uid, emailVerified, diet, dietGoal, age, height, weight, weightGoal, gender, test;
+var pathReference;
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         if (user != null) {
@@ -18,6 +21,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
                              // this value to authenticate with your backend server, if
                              // you have one. Use User.getToken() instead.
+            /*Code below no longer needed 
             var dietThis = database.ref('userSurvey/' + uid + '/answers' + "/diet");
             dietThis.on('value', (snapshot) => {
             diet = snapshot.val();
@@ -46,6 +50,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             genderThis.on('value', (snapshot) => {
             gender = snapshot.val();
             });
+            */
             /* Bottom works but same does same thing as above
             var docRef = firestore.collection('userSurvey').doc(uid);
             docRef.get().then((doc) => {
@@ -70,6 +75,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 export const UserInfo = () => {
     const [user, setUser] = useState([]);
+    const [userImage, setImage] = useState([]);
     const ref = firestore.collection("userSurvey").doc(uid);
     function getData (){
         ref.get().then((doc) => {
@@ -83,6 +89,9 @@ export const UserInfo = () => {
             }).catch((error) => {
                 console.log("Error getting document:", error);
             });
+        var storage = firebase.storage();
+        var pathReference = storage.ref('users/' + uid + '/profile.jpg');
+        setImage(pathReference)
     }
     useEffect(()=> {
         getData();
@@ -100,6 +109,7 @@ export const UserInfo = () => {
                                 <Avatar>
                                     <PersonIcon color="secondary" style={{ fontSize: 40 }}></PersonIcon>
                                 </Avatar>
+                                <Avatar alt="Remy Sharp" src={userImage}/>
                             </Box>
                             <Box color="primary.main" pt={7}fontSize={57} fontWeight="fontWeightBold"> User information</Box>
                             <Box color="primary.main" pt={3}> Name: {name}</Box>
@@ -111,6 +121,7 @@ export const UserInfo = () => {
                             <Box color="primary.main" pt={1}> Weight: {user.weight} pounds</Box>
                             <Box color="primary.main" pt={1}> Weight goal: {user.weightGoal}</Box> 
                             <Box color="primary.main" pt={1}> Estimated metabalism: {metabolism} calories</Box> 
+                            <ImageGrid></ImageGrid>
                         </div>
                     </Box>
                 </Card>
