@@ -63,8 +63,7 @@ export default function NewRecipe() {
 
           firestore
             .collection("recipes")
-            .doc(user.uid)
-            .set({
+            .add ({
               name: values.title,
               dishType: values.dishType,
               description: values.description,
@@ -73,7 +72,9 @@ export default function NewRecipe() {
               cookingTime: values.cookingTime,
               ingredients: ingredientsArray,
               directions: directionsArray,
-              userid:user.email,
+              user:user.email,
+              userid:user.uid,
+
             });
 
           console.log(values)
