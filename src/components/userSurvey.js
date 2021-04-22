@@ -8,19 +8,14 @@ import FormControl from '@material-ui/core/FormControl';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import firebase from '../firebase';
+import {firestore} from "../firebase";
 import NavigationBar from "./NavigationBar";
 import { Link, useHistory } from 'react-router-dom'
-var user = firebase.auth().currentUser;
-//var uuid = require('uuid');
-var name, email, photoUrl, uid, emailVerified;
+var uid;
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         if (user != null) {
-            name = user.displayName;
-            email = user.email;
-            photoUrl = user.photoURL;
-            emailVerified = user.emailVerified;
             uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
                              // this value to authenticate with your backend server, if
                              // you have one. Use User.getToken() instead.
@@ -35,6 +30,12 @@ class Survey extends Component {
     surveySubmit(event){
         firebase.database().ref('userSurvey/' + uid).set({
             answers:this.state.answers
+        });
+        firestore
+        .collection("userSurvey")
+        .doc(uid)
+        .set({
+            answers: this.state.answers,
         });
         this.setState({isSubmitted:true})
     }
