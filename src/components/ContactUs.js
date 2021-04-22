@@ -1,11 +1,18 @@
-import { SettingsApplicationsRounded } from "@material-ui/icons"
-import { render } from "@testing-library/react"
+import React from 'react';
 
 export default function ContactUs(){
-    render(){
+    
     
     return(
-        <div>Hello</div>
+
+       
+            <div className="words">
+            
+                Welcome back 
+                
+             
+            
+            </div>
+            
     )
-    }
 }

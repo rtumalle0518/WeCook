@@ -39,7 +39,7 @@ function App() {
 						<Route path="/userInfo" component={userInfo} />
 						<Route path="/cookbook" component={CookBook} />
                         <Route path="/userrecipes" component={UserRecipe} />
-						<Route path="/ContacUs" component={ContactUs} />
+						<Route path="/ContactUs" component={ContactUs} />
 					</Switch>
 				</AuthProvider>
 			</Router>
