@@ -18,13 +18,14 @@ export const colors ={
 }
 
 // Styled components
+// original back ground linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${background})
 export const StyledContainer = styled.div`
-    margin: 0;
+    margin: 0px;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${background});
+    background: #fafafa;
     background-size: cover;
     background-attachment: fixed;
     `;
