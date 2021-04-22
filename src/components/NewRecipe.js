@@ -7,6 +7,7 @@ import { Formik, Field} from 'formik';
 import NavigationBar from './NavigationBar';
 import {StyledContainer} from './Styles.js';
 import { StyledTitle, StyledSubTitle } from "./Styles.js";
+import "./Cookbook.css";
 import  './App.css';
 import * as yup from 'yup'
 
@@ -46,7 +47,7 @@ export default function NewRecipe() {
     <>
     <NavigationBar></NavigationBar>
     <StyledContainer>
-      <Formik style = {{textAlign: 'center'}}
+      <Formik
         initialValues={{
           title: '',
           dishType: '',
@@ -94,19 +95,11 @@ export default function NewRecipe() {
           handleBlur,
           setFieldValue,
         }) => (
-        <Form style = {{/*textAlign: 'center',*/ marginLeft: '0px'}} onSubmit={handleSubmit}>
-          <div>
-            <div></div> 
-            <StyledTitle size={65}>
-              Creating Your Recipe!
-              </StyledTitle>
-              <StyledSubTitle size={27}>
-                Scroll Down to Learn More!
-              </StyledSubTitle></div>
-          <h1 style = {{textAlign: 'center'}} className='new-recipe'>Creating Your Recipe!</h1>
+        <Form style = {{ marginLeft: '0px' }} onSubmit={handleSubmit}>
+          <div className="cookbooktext" style = {{textAlign: 'center'}}>Create Your Recipe!</div>
           <Form.Group controlId="validationTitle">
             <Form.Label>Recipe Title</Form.Label>
-            <Field placeholder="Enter Recipe Title" name="title"
+            <Field placeholder="ex: Cheesecake" name="title"
               type="input" as={Form.Control} isValid={touched.title && !errors.title} isInvalid={!!errors.title}/>
             <Form.Control.Feedback type="invalid">
               {errors.title}
@@ -240,10 +233,10 @@ export default function NewRecipe() {
           </Form.Group> */}
 
 
-          <div className="d-flex justify-content-center align-items-center">
+          <div className="d-flex justify-content-center align-items-center" style={{ marginBottom: "30px"}}>
             <Button disabled={isSubmitting} type="submit">Submit Recipe!</Button>
           </div>
-          <pre>{JSON.stringify(values, null, 2)}</pre>
+          {/* for testing purposes <pre>{JSON.stringify(values, null, 2)}</pre> */}
         </Form>
         )}
       </Formik>
