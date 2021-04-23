@@ -65,7 +65,7 @@ export default function NewRecipe() {
         onSubmit={(values, onSubmitProps) => {
           onSubmitProps.setSubmitting(true);
           const ingredientsArray = values.ingredients.split("\n");
-          const directionsArray = values.directions.split(", ")
+          const directionsArray = values.directions.split("\n")
           /*
           firestore
             .collection("recipes")
@@ -94,6 +94,7 @@ export default function NewRecipe() {
               directions: directionsArray,
               user:user.email,
               userid:user.uid,
+              recipeid: uuid.v1()
             
             });
 
@@ -228,7 +229,7 @@ export default function NewRecipe() {
               name="directions"
               rows={5} 
               value={values.directions}
-              placeholder="Enter Directions of Recipe (Seperated by Commas)"
+              placeholder="Enter Directions of Recipe (Seperated by Lines)"
               onChange={handleChange}
               onBlur={handleBlur}
               isValid={touched.directions && !errors.directions}
@@ -258,7 +259,7 @@ export default function NewRecipe() {
             
           </div>
           <div className="d-flex justify-content-center align-items-center" style={{ marginBottom: "30px"}}>
-            <a class="btn btn-link" href="ViewSubmittedRecipes" role="button">View my submitted recipes</a>
+            <a className="btn btn-link" href="ViewSubmittedRecipes" role="button">View my submitted recipes</a>
             </div>
           {/* for testing purposes <pre>{JSON.stringify(values, null, 2)}</pre> */}
         </Form>

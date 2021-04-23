@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function RecipeCard() {
+export default function RecipeCard(props) {
     const [flag, setFlag] = useState(true);
     const classes = useStyles();
 

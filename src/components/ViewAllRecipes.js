@@ -72,6 +72,8 @@ function UserRecipe() {
       setRecipes(items);
   });
   }
+  
+  console.log(recipes);
 
   useEffect(()=> {
     getRecipes();
