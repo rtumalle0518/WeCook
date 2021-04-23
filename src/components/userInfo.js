@@ -6,7 +6,7 @@ import firebase from '../firebase';
 import NavigationBar from './NavigationBar'
 import { Form, Button, Card, Alert, Container} from "react-bootstrap"
 import {firestore} from "../firebase";
-import UploadForm from "./UploadForm";
+import UploadForm from "./UploadProfileImage";
 import ImageGrid from "./ImageGrid";
 import useFirestore from '../hooks/useFirestore';
 var database = firebase.database();
@@ -75,7 +75,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   });
 
 export const UserInfo = () => {
-    const { docs } = useFirestore('images');
+    //Tip just change underneath to userFirestore("imagesRecipe") to get recipe image instead
+    const { docs } = useFirestore('imagesProfile');
     const [user, setUser] = useState([]);
     const [userImage, setImage] = useState([]);
     const ref = firestore.collection("userSurvey").doc(uid);

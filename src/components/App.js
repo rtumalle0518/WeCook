@@ -11,14 +11,15 @@ import Homepage from "./Homepage";
 import userSurvey from "./userSurvey";
 import textbox from "./textbox";
 import notFoundPage from "./notFoundPage";
-import NewRecipe from "./NewRecipe";
+import CreateNewRecipe from "./CreateNewRecipe";
 import Survey from "./page/Survey";
 import Plan from "./page/Plan";
 import userInfo from "./userInfo";
 import CookBook from "./Cookbook";
-import UserRecipe from "./UserRecipes"
+import ViewAllRecipes from "./ViewAllRecipes"
 import ContactUs from "./ContactUs"
 import RecipeCard from "./RecipeCard"
+import ViewSubmittedRecipes from "./ViewSubmittedRecipes"
 
 function App() {
 	return (
@@ -33,15 +34,16 @@ function App() {
 						<Route path="/forgot-password" component={ForgotPassword} />
 						<Route path="/recipe" component={Recipe} />
 						<Route path="/survey" component={Survey} />
-						<Route path="/newrecipe" component={NewRecipe} />
+						<Route path="/CreateNewRecipe" component={CreateNewRecipe} />
 						<Route path="/textbox" component={textbox} />
 						<Route path="/meal-plan" component={Plan} />
 						<Route path="/userSurvey" component={userSurvey} />
 						<Route path="/userInfo" component={userInfo} />
 						<Route path="/cookbook" component={CookBook} />
-                        <Route path="/userrecipes" component={UserRecipe} />
+                        <Route path="/ViewAllRecipes" component={ViewAllRecipes} />
 						<Route path="/ContactUs" component={ContactUs} />
-						<Route path="/recipecard" compnenet={RecipeCard} />
+						<Route path="/recipecard" component={RecipeCard} />
+						<Route path="/ViewSubmittedRecipes" component={ViewSubmittedRecipes}/>
 					</Switch>
 				</AuthProvider>
 			</Router>

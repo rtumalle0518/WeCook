@@ -22,7 +22,7 @@ const useStorage = (file) => {
   useEffect(() => {
     // references
     const storageRef = projectStorage.ref(file.name);
-    const collectionRef = firestore.collection('images').doc(uid);
+    const collectionRef = firestore.collection('imagesProfile').doc(uid);
     
     storageRef.put(file).on('state_changed', (snap) => {
       let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
