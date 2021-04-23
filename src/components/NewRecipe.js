@@ -47,6 +47,10 @@ export default function NewRecipe() {
   return (
     <>
     <NavigationBar></NavigationBar>
+    
+  
+    
+    
     <StyledContainer>
       <Formik
         initialValues={{
@@ -111,7 +115,8 @@ export default function NewRecipe() {
           setFieldValue,
         }) => (
         <Form style = {{ marginLeft: '0px' }} onSubmit={handleSubmit}>
-          <div className="cookbooktext" style = {{textAlign: 'center'}}>Create Your Recipe!</div>
+          <div className="cookbooktext" style = {{textAlign: 'center'}}>Create Your Recipe!  
+            </div>
           <Form.Group controlId="validationTitle">
             <Form.Label>Recipe Title</Form.Label>
             <Field placeholder="ex: Cheesecake" name="title"
@@ -248,9 +253,13 @@ export default function NewRecipe() {
           </Form.Group> */}
 
 
-          <div className="d-flex justify-content-center align-items-center" style={{ marginBottom: "30px"}}>
+          <div className="d-flex justify-content-center align-items-center" style={{ marginBottom: "5px"}}>
             <Button disabled={isSubmitting} type="submit">Submit Recipe!</Button>
+            
           </div>
+          <div className="d-flex justify-content-center align-items-center" style={{ marginBottom: "30px"}}>
+            <a class="btn btn-link" href="ViewSubmittedRecipes" role="button">View my submitted recipes</a>
+            </div>
           {/* for testing purposes <pre>{JSON.stringify(values, null, 2)}</pre> */}
         </Form>
         )}
