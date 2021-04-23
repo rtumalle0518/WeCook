@@ -23,49 +23,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 function Item(props) {
     return <li>{props.ingredient}</li>;
 }
+
 function UserRecipe() {
     
   const [recipes, setRecipes] = useState([]);
-  // const fetchRecipes=async()=>{
-  //   const response=firestore.collection('recipes');
-  //   const data=await response.get();
-  //   data.docs.forEach(item=>{
-  //    setRecipes([...recipes,item.data()])
-  //   })
-  // }
-
-  // this.setState({recipes:recipes})
-
-  /*Code below old and not usefull"
-  const ref=firestore.collection("recipes");
-  function getRecipes (){
-    ref.onSnapshot((querySnapshot) =>{
-      const items = [];
-      querySnapshot.forEach((doc)=> {
-        items.push(doc.data());
-
-      });
-      setRecipes(items);
-
-    });
-  }
-  */
-  /*Hint use code below and uncomment it to get the recipes of one user base on uid. So private recipes THIS WILL HELP FILTER PRIVATE RECIPES FROM ALL RECIPES
-  const ref=firestore.collection("users").doc(uid).collection("recipes");
-  function getRecipes (){
-    ref.onSnapshot((querySnapshot) =>{
-      const items = [];
-      querySnapshot.forEach((doc)=> {
-        items.push(doc.data());
-
-      });
-      setRecipes(items);
-
-    });
-  }
-  */
   
-
   const ref=firestore.collectionGroup("recipes")
   function getRecipes (){
     ref.get().then((querySnapshot) => {
