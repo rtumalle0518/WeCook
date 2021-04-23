@@ -1,6 +1,9 @@
 import firebase from 'firebase';
 import React,{useState,useEffect} from 'react';
+import './UserRecipesGrid.css'
 import { firestore } from '../firebase';
+import RecipeCard from './RecipeCard';
+import NavigationBar from './NavigationBar';
 
 var uid;
 firebase.auth().onAuthStateChanged(function(user) {
@@ -69,6 +72,8 @@ function UserRecipe() {
       setRecipes(items);
   });
   }
+  
+  console.log(recipes);
 
   useEffect(()=> {
     getRecipes();
@@ -76,7 +81,17 @@ function UserRecipe() {
 
   return (
     <div className="">
-      {
+      <NavigationBar />
+      <section className="recipeGrid">
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+      </section>
+      {/*
         recipes && recipes.map(recipe=>{
           return(
             <div className="">
@@ -87,8 +102,10 @@ function UserRecipe() {
             </div>
           )
         })
-      }
+      */}
     </div>
+    
+    
   );
 }
 

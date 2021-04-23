@@ -18,6 +18,7 @@ import userInfo from "./userInfo";
 import CookBook from "./Cookbook";
 import ViewAllRecipes from "./ViewAllRecipes"
 import ContactUs from "./ContactUs"
+import RecipeCard from "./RecipeCard"
 import ViewSubmittedRecipes from "./ViewSubmittedRecipes"
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
 						<Route path="/cookbook" component={CookBook} />
                         <Route path="/ViewAllRecipes" component={ViewAllRecipes} />
 						<Route path="/ContactUs" component={ContactUs} />
+						<Route path="/recipecard" component={RecipeCard} />
 						<Route path="/ViewSubmittedRecipes" component={ViewSubmittedRecipes}/>
 					</Switch>
 				</AuthProvider>
