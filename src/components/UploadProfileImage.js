@@ -38,7 +38,7 @@ const classes = useStyles();
   return (
     <form>
       <input className={classes.input} accept="image/*" onChange = {handleChange} id="icon-button-file" type="file" />
-      <label htmlFor = "icon-button-file">
+      <label htmlFor = "icon-button-file" style={{textAlign: 'center', marginRight: '100px'}} >
         {/*Below code is original if break just uncomment
         <input type="file" onChange={handleChange} />
         <span>+</span>

@@ -42,6 +42,7 @@ function App() {
 						<Route path="/ContactUs" component={ContactUs} />
 						<Route path="/recipecard" component={RecipeCard} />
 						<Route path="/ViewSubmittedRecipes" component={ViewSubmittedRecipes}/>
+						<Route path="/*" component={notFoundPage}/>
 					</Switch>
 				</AuthProvider>
 			</Router>
