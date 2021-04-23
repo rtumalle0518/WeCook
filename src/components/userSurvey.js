@@ -11,8 +11,9 @@ import firebase from '../firebase';
 import {firestore} from "../firebase";
 import NavigationBar from "./NavigationBar";
 import { Link, useHistory } from 'react-router-dom'
-import UploadForm from "./UploadForm";
+import UploadProfileImage from "./UploadProfileImage";
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button'
 var uid;
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -189,8 +190,8 @@ class Survey extends Component {
                 </div>
                 <div className="card">
                     <Box color="primary.main" display="flex" justifyContent="center" alignItems="center" p={1}>
-                        <label>Click the camera to upload profile photo</label>
-                        <UploadForm></UploadForm>
+                        
+                        <UploadProfileImage></UploadProfileImage>
                     </Box>
                 </div>
                 <input className = "feedback-button" type="submit" value="submit" />

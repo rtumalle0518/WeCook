@@ -1,7 +1,9 @@
 import firebase from 'firebase';
 import React,{useState,useEffect} from 'react';
 import { firestore } from '../firebase';
-
+import UploadRecipeImage from './UploadRecipeImage';
+import useFirestore from '../hooks/useFirestore';
+var database = firebase.database();
 var uid;
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -16,7 +18,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   });
 
 function ViewSubmittedRecipes() {
-    
+  const { docs } = useFirestore('imagesRecipe');
   const [recipes, setRecipes] = useState([]);
   // const fetchRecipes=async()=>{
   //   const response=firestore.collection('recipes');
@@ -84,6 +86,8 @@ function ViewSubmittedRecipes() {
               <p>{recipe.description}</p>
               <p>{recipe.directions}</p>
               <p>{recipe.ingredients}</p>
+              <UploadRecipeImage></UploadRecipeImage> <br></br>
+              <img src = {docs.url} alt = "uploaded pic" width="200" height="200"></img>
             </div>
           )
         })
