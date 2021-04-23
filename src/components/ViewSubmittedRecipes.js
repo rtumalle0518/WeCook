@@ -2,7 +2,12 @@ import firebase from 'firebase';
 import React,{useState,useEffect} from 'react';
 import { firestore } from '../firebase';
 import UploadRecipeImage from './UploadRecipeImage';
-import useFirestore from '../hooks/useFirestore';
+//import useFirestore from '../hooks/useFirestore';
+import NavigationBar from './NavigationBar'
+import RecipeCard from './RecipeCard'
+import moment from 'moment';
+
+
 var database = firebase.database();
 var uid;
 firebase.auth().onAuthStateChanged(function(user) {
@@ -13,12 +18,11 @@ firebase.auth().onAuthStateChanged(function(user) {
                              // you have one. Use User.getToken() instead.
           }
     } else {
-      // No user is signed in.
     }
   });
 
 function ViewSubmittedRecipes() {
-  const { docs } = useFirestore('imagesRecipe');
+  //const { docs } = useFirestore('imagesRecipe');
   const [recipes, setRecipes] = useState([]);
   // const fetchRecipes=async()=>{
   //   const response=firestore.collection('recipes');
@@ -77,22 +81,27 @@ function ViewSubmittedRecipes() {
   }, []);
 
   return (
-    <div className="">
-      {
-        recipes && recipes.map(recipe=>{
-          return(
-            <div className="">
-              <h4>{recipe.name}</h4>
-              <p>{recipe.description}</p>
-              <p>{recipe.directions}</p>
-              <p>{recipe.ingredients}</p>
-              <UploadRecipeImage></UploadRecipeImage> <br></br>
-              <img src = {docs.url} alt = "uploaded pic" width="200" height="200"></img>
-            </div>
-          )
-        })
-      }
+    <div>
+      <NavigationBar />
+        <section className="recipeGrid">
+          {
+            recipes && recipes.map(recipe=>{
+              return(
+                <RecipeCard 
+                  title={recipe.name} 
+                  date={moment(recipe.createdAt.toDate()).calendar()}
+                  description={recipe.description}
+                  ingredients={recipe.ingredients}
+                  directions={recipe.directions}
+                  cookingTime={recipe.cookingTime}
+                  servings={recipe.servings}
+                />
+              )
+            })
+          }
+        </section>
     </div>
+    
   );
 }
 

@@ -65,7 +65,7 @@ export default function NewRecipe() {
         onSubmit={(values, onSubmitProps) => {
           onSubmitProps.setSubmitting(true);
           const ingredientsArray = values.ingredients.split("\n");
-          const directionsArray = values.directions.split("\n")
+          const directionsArray = values.directions.split("\n");
           /*
           firestore
             .collection("recipes")
@@ -94,8 +94,7 @@ export default function NewRecipe() {
               directions: directionsArray,
               user:user.email,
               userid:user.uid,
-              recipeid: uuid.v1()
-            
+              recipeid: uuid.v1(),
             });
 
           console.log(values)
