@@ -3,6 +3,7 @@ import React,{useState,useEffect} from 'react';
 import { firestore } from '../firebase';
 import UploadRecipeImage from './UploadRecipeImage';
 import useFirestore from '../hooks/useFirestore';
+import RecipeCard from './RecipeCard';
 var database = firebase.database();
 var uid;
 firebase.auth().onAuthStateChanged(function(user) {
@@ -86,8 +87,7 @@ function ViewSubmittedRecipes() {
               <p>{recipe.description}</p>
               <p>{recipe.directions}</p>
               <p>{recipe.ingredients}</p>
-              <UploadRecipeImage></UploadRecipeImage> <br></br>
-              <img src = {docs.url} alt = "uploaded pic" width="200" height="200"></img>
+              <img src = {recipe.recipeImage} alt = "uploaded pic" width="200" height="200"></img>
             </div>
           )
         })

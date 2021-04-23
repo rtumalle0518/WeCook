@@ -9,10 +9,15 @@ import {StyledContainer} from './Styles.js';
 import { StyledTitle, StyledSubTitle } from "./Styles.js";
 import "./Cookbook.css";
 import  './App.css';
+import UploadRecipeImage from "./UploadRecipeImage";
+import Box from "@material-ui/core/Box";
+import useFirestore from '../hooks/useFirestore';
 import * as yup from 'yup'
+
 var uuid = require("uuid");
 
 export default function NewRecipe() {
+  const { docs } = useFirestore('imagesRecipe');
   const user = auth.currentUser
   const history = useHistory();
   // const SUPPORTED_FORMATS = [ 
@@ -94,8 +99,8 @@ export default function NewRecipe() {
               directions: directionsArray,
               user:user.email,
               userid:user.uid,
-              recipeid: uuid.v1()
-            
+              recipeid: uuid.v1(),
+              recipeImage: docs.url
             });
 
           console.log(values)
@@ -239,6 +244,10 @@ export default function NewRecipe() {
              {errors.directions}
             </Form.Control.Feedback>
           </Form.Group>
+          <Box alignItems="center" p={2} display = "flex" justifyContent="center" fontSize={26} textAlign="center" boxShadow={3} bgcolor = "white" width = "100%" height = "10vh" borderColor="primary.main" borderRadius={16}>
+          Upload recipe image
+          <UploadRecipeImage></UploadRecipeImage>
+          </Box>
           
           {/* <Form.Group controlId= "validationFile">
             <Field

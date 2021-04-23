@@ -37,6 +37,9 @@ export default function NavigationBar() {
 						<Nav.Link href="/textbox">textbox</Nav.Link>
 						<Nav.Link href="/userSurvey">User Survey</Nav.Link>
 						<Nav.Link href="/userInfo">User Info</Nav.Link>
+						<Nav.Link href="/CreateNewRecipe">Create a new recipe</Nav.Link>
+						<Nav.Link href="/ViewSubmittedRecipes">View your recipes</Nav.Link>
+						<Nav.Link href="/ViewAllRecipes">View all recipes</Nav.Link>
 					</Nav>
 
 					<Nav className="ml-auto">
