@@ -213,7 +213,7 @@ export default function NewRecipe() {
              {errors.directions}
             </Form.Control.Feedback>
           </Form.Group>
-          <Box alignItems="center" p={2} display = "flex" justifyContent="center" fontSize={26} textAlign="center" boxShadow={3} bgcolor = "white" width = "100%" height = "10vh" borderColor="primary.main" borderRadius={16}>
+          <Box alignItems="center" p={2} display = "flex" justifyContent="center" fontSize={26} textAlign="center" boxShadow={3} bgcolor = "white" width = "100%" height = "10vh" borderColor="primary.main" borderRadius={16} marginBottom="8px">
           Upload recipe image
           <UploadRecipeImage></UploadRecipeImage>
           </Box>

@@ -34,14 +34,14 @@ export default function NavigationBar() {
                     </Navbar.Brand>
                     <Nav className="mr-auto"> 
                         <Nav.Link href="/cookbook">Cookbook</Nav.Link>
-                        <Nav.Link href="/survey">Survey</Nav.Link>
-                        <Nav.Link href="/userInfo">User Info</Nav.Link>
+                        <Nav.Link href="/survey">Meal Plan</Nav.Link>
                         <Nav.Link href="/CreateNewRecipe">Add a recipe</Nav.Link>
                         <Nav.Link href="/ViewSubmittedRecipes">Look at your recipes</Nav.Link>
                         <Nav.Link href="/ViewAllRecipes">Look at all recipes</Nav.Link>
                     </Nav>
                     
                     <Nav className="ml-auto">
+                        <Nav.Link href="/userInfo">Profile</Nav.Link>
                         <Nav.Link href="/WeCook" onClick={handleLogout}>Log Out</Nav.Link>
                     </Nav>
                 </Navbar>
@@ -64,8 +64,7 @@ export default function NavigationBar() {
                 <Nav className="mr-auto"> 
                     <Nav.Link href="/cookbook">Cookbook</Nav.Link>
                     {/*Comment off line below to get rid of survey button if user is not logged in*/}
-                    <Nav.Link href="/survey">Survey</Nav.Link>
-                    <Nav.Link href="/userInfo">User Info</Nav.Link>
+                    <Nav.Link href="/survey">Meal Plan</Nav.Link>
                 </Nav>
                 
                 <Nav className="ml-auto">
