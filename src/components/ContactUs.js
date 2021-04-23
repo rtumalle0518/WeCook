@@ -1,6 +1,5 @@
 import React from 'react';
 import './contactus.scss'
-import {StyledContainer} from './styles1.js';
 import NavigationBar from './NavigationBar';
 import Footer from "./Footer";
 
