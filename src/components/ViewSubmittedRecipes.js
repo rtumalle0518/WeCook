@@ -2,9 +2,10 @@ import firebase from 'firebase';
 import React,{useState,useEffect} from 'react';
 import { firestore } from '../firebase';
 import UploadRecipeImage from './UploadRecipeImage';
+import useFirestore from '../hooks/useFirestore';
+import RecipeCard from './RecipeCard';
 //import useFirestore from '../hooks/useFirestore';
 import NavigationBar from './NavigationBar'
-import RecipeCard from './RecipeCard'
 import moment from 'moment';
 
 
