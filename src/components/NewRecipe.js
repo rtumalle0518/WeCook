@@ -10,6 +10,7 @@ import { StyledTitle, StyledSubTitle } from "./Styles.js";
 import "./Cookbook.css";
 import  './App.css';
 import * as yup from 'yup'
+var uuid = require("uuid");
 
 export default function NewRecipe() {
   const user = auth.currentUser
@@ -61,7 +62,7 @@ export default function NewRecipe() {
           onSubmitProps.setSubmitting(true);
           const ingredientsArray = values.ingredients.split("\n");
           const directionsArray = values.directions.split(", ")
-
+          /*
           firestore
             .collection("recipes")
             .add ({
@@ -75,7 +76,21 @@ export default function NewRecipe() {
               directions: directionsArray,
               user:user.email,
               userid:user.uid,
-
+              */
+          firestore
+            .collection("users").doc(user.uid).collection("recipes").doc(uuid.v1())
+            .set ({
+              name: values.title,
+              dishType: values.dishType,
+              description: values.description,
+              servings: values.servings,
+              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+              cookingTime: values.cookingTime,
+              ingredients: ingredientsArray,
+              directions: directionsArray,
+              user:user.email,
+              userid:user.uid,
+            
             });
 
           console.log(values)
