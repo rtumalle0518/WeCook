@@ -24,6 +24,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 function ViewSubmittedRecipes() {
   //const { docs } = useFirestore('imagesRecipe');
   const [recipes, setRecipes] = useState([]);
+  
   // const fetchRecipes=async()=>{
   //   const response=firestore.collection('recipes');
   //   const data=await response.get();
