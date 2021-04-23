@@ -10,6 +10,7 @@ import { StyledTitle, StyledSubTitle } from "./Styles.js";
 import "./Cookbook.css";
 import  './App.css';
 import * as yup from 'yup'
+var uuid = require("uuid");
 
 export default function NewRecipe() {
   const user = auth.currentUser
@@ -63,8 +64,8 @@ export default function NewRecipe() {
           const directionsArray = values.directions.split(", ")
 
           firestore
-            .collection("recipes")
-            .add ({
+            .collection("recipes").doc(user.uid).collection("personal").doc(uuid.v1())
+            .set ({
               name: values.title,
               dishType: values.dishType,
               description: values.description,
