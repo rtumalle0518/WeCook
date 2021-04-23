@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ProgressBar from './ProgressBar';
+import ProgressBarProfileImage from './ProgressBarProfileImage';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
@@ -50,7 +50,7 @@ const classes = useStyles();
       <div className="output">
         { error && <div className="error">{ error }</div>}
         { file && <div>{ file.name }</div> }
-        { file && <ProgressBar file={file} setFile={setFile} /> }
+        { file && <ProgressBarProfileImage file={file} setFile={setFile} /> }
       </div>
     </form>
   );
