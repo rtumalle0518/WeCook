@@ -18,6 +18,7 @@ import userInfo from "./userInfo";
 import CookBook from "./Cookbook";
 import UserRecipe from "./UserRecipes"
 import ContactUs from "./ContactUs"
+import RecipeCard from "./RecipeCard"
 
 function App() {
 	return (
@@ -40,6 +41,7 @@ function App() {
 						<Route path="/cookbook" component={CookBook} />
                         <Route path="/userrecipes" component={UserRecipe} />
 						<Route path="/ContactUs" component={ContactUs} />
+						<Route path="/recipecard" compnenet={RecipeCard} />
 					</Switch>
 				</AuthProvider>
 			</Router>

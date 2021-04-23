@@ -1,6 +1,9 @@
 import firebase from 'firebase';
 import React,{useState,useEffect} from 'react';
+import './UserRecipesGrid.css'
 import { firestore } from '../firebase';
+import RecipeCard from './RecipeCard';
+import NavigationBar from './NavigationBar';
 
 
 
@@ -35,20 +38,32 @@ function UserRecipe() {
   }, []);
 
   return (
-    <div className="">
-      {
-        recipes && recipes.map(recipe=>{
-          return(
-            <div className="">
-              <h4>{recipe.name}</h4>
-              <p>{recipe.description}</p>
-              <p>{recipe.directions}</p>
-              <p>{recipe.ingredients}</p>
-            </div>
-          )
-        })
-      }
+    <div>
+      <NavigationBar />
+      <section className="recipeGrid">
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+      </section>
     </div>
+    // <div className="">
+    //   {
+    //     recipes && recipes.map(recipe=>{
+    //       return(
+    //         <div className="">
+    //           <h4>{recipe.name}</h4>
+    //           <p>{recipe.description}</p>
+    //           <p>{recipe.directions}</p>
+    //           <p>{recipe.ingredients}</p>
+    //         </div>
+    //       )
+    //     })
+    //   }
+    // </div>
   );
 }
 
