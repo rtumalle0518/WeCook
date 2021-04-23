@@ -19,55 +19,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             email = user.email;
             photoUrl = user.photoURL;
             emailVerified = user.emailVerified;
-            uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                             // this value to authenticate with your backend server, if
-                             // you have one. Use User.getToken() instead.
-            /*Code below no longer needed 
-            var dietThis = database.ref('userSurvey/' + uid + '/answers' + "/diet");
-            dietThis.on('value', (snapshot) => {
-            diet = snapshot.val();
-            });
-            var dietGoalThis = database.ref('userSurvey/' + uid + '/answers' + "/dietGoal");
-            dietGoalThis.on('value', (snapshot) => {
-            dietGoal = snapshot.val();
-            });
-            var ageThis = database.ref('userSurvey/' + uid + '/answers' + "/age");
-            ageThis.on('value', (snapshot) => {
-            age = snapshot.val();
-            });
-            var weightThis = database.ref('userSurvey/' + uid + '/answers' + "/weight");
-            weightThis.on('value', (snapshot) => {
-            weight = snapshot.val();
-            });
-            var weightGoalThis = database.ref('userSurvey/' + uid + '/answers' + "/weightGoal");
-            weightGoalThis.on('value', (snapshot) => {
-            weightGoal = snapshot.val();
-            });
-            var heightThis = database.ref('userSurvey/' + uid + '/answers' + "/height");
-            heightThis.on('value', (snapshot) => {
-            height = snapshot.val();
-            });
-            var genderThis = database.ref('userSurvey/' + uid + '/answers' + "/gender");
-            genderThis.on('value', (snapshot) => {
-            gender = snapshot.val();
-            });
-            */
-            /* Bottom works but same does same thing as above
-            var docRef = firestore.collection('userSurvey').doc(uid);
-            docRef.get().then((doc) => {
-            if (doc.exists) {
-                console.log(doc.data().answers.diet);
-                console.log("success");
-                test = doc.data().answers.diet;
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-                console.log(uid);
-            }
-            }).catch((error) => {
-                console.log("Error getting document:", error);
-            });
-            */
+            uid = user.uid; 
           }
     } else {
       // No user is signed in.
@@ -104,7 +56,7 @@ export const UserInfo = () => {
     return (
         <div>
             <NavigationBar></NavigationBar>
-            <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh"}}>
+            <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
                 <Card>
                     <Box alignItems="center" p={2} display = "flex" justifyContent="center" fontSize={25} textAlign="center" boxShadow={3} bgcolor = "white" width = "100%" height = "95vh" borderColor="primary.main" borderRadius={16}>
                         <div>

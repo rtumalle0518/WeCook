@@ -9,7 +9,6 @@ import ForgotPassword from "./ForgotPassword";
 import Recipe from "./Recipe";
 import Homepage from "./Homepage";
 import userSurvey from "./userSurvey";
-import textbox from "./textbox";
 import notFoundPage from "./notFoundPage";
 import CreateNewRecipe from "./CreateNewRecipe";
 import Survey from "./page/Survey";
@@ -35,7 +34,6 @@ function App() {
 						<Route path="/recipe" component={Recipe} />
 						<Route path="/survey" component={Survey} />
 						<Route path="/CreateNewRecipe" component={CreateNewRecipe} />
-						<Route path="/textbox" component={textbox} />
 						<Route path="/meal-plan" component={Plan} />
 						<Route path="/userSurvey" component={userSurvey} />
 						<Route path="/userInfo" component={userInfo} />
