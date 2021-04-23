@@ -20,11 +20,6 @@ export default function NewRecipe() {
   const { docs } = useFirestore('imagesRecipe');
   const user = auth.currentUser
   const history = useHistory();
-  // const SUPPORTED_FORMATS = [ 
-  //   "image/jpg",
-  //   "image/jpeg",
-  //   "image/png"
-  // ];
 
   if(!user){
     history.push("/login");
@@ -39,23 +34,11 @@ export default function NewRecipe() {
     description: yup.string().required('Please enter a description'),
     ingredients: yup.string().required('Please enter the ingredients'),
     directions: yup.string().required('Please enter the directions'),
-    // file: yup
-    //       .mixed()
-    //       .required("A file is required")
-    //       .test("FILE_SIZE", "Uploaded file is too big.", 
-    //         value => !value || (value && value.size <= FILE_SIZE))
-    //       .test("FILE_FORMAT", "Uploaded file has unsupported format.", 
-    //         value => !value || (value && SUPPORTED_FORMATS.includes(value.type)))
-
   });
 
   return (
     <>
     <NavigationBar></NavigationBar>
-    
-  
-    
-    
     <StyledContainer>
       <Formik
         initialValues={{
@@ -71,21 +54,7 @@ export default function NewRecipe() {
           onSubmitProps.setSubmitting(true);
           const ingredientsArray = values.ingredients.split("\n");
           const directionsArray = values.directions.split("\n");
-          /*
-          firestore
-            .collection("recipes")
-            .add ({
-              name: values.title,
-              dishType: values.dishType,
-              description: values.description,
-              servings: values.servings,
-              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-              cookingTime: values.cookingTime,
-              ingredients: ingredientsArray,
-              directions: directionsArray,
-              user:user.email,
-              userid:user.uid,
-              */
+          
           firestore
             .collection("users").doc(user.uid).collection("recipes").doc(uuid.v1())
             .set ({
@@ -248,20 +217,6 @@ export default function NewRecipe() {
           Upload recipe image
           <UploadRecipeImage></UploadRecipeImage>
           </Box>
-          
-          {/* <Form.Group controlId= "validationFile">
-            <Field
-              name="file" 
-              type="file" 
-              as={Form.File}
-              isValid={touched.file && !errors.file}
-              isInvalid={!!errors.file} 
-            />
-            <Form.Control.Feedback type="invalid">
-             {errors.file}
-            </Form.Control.Feedback>
-          </Form.Group> */}
-
 
           <div className="d-flex justify-content-center align-items-center" style={{ marginBottom: "5px"}}>
             <Button disabled={isSubmitting} type="submit">Submit Recipe!</Button>
