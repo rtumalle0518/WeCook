@@ -4,6 +4,9 @@ import './UserRecipesGrid.css'
 import { firestore } from '../firebase';
 import RecipeCard from './RecipeCard';
 import NavigationBar from './NavigationBar';
+import moment from 'moment';
+import Recipe from './Recipe';
+import { recomposeColor } from '@material-ui/core';
 
 var uid;
 firebase.auth().onAuthStateChanged(function(user) {
@@ -17,7 +20,9 @@ firebase.auth().onAuthStateChanged(function(user) {
       // No user is signed in.
     }
   });
-
+function Item(props) {
+    return <li>{props.ingredient}</li>;
+}
 function UserRecipe() {
     
   const [recipes, setRecipes] = useState([]);
@@ -73,36 +78,31 @@ function UserRecipe() {
   });
   }
   
-  console.log(recipes);
 
   useEffect(()=> {
     getRecipes();
   }, []);
 
   return (
-    <div className="">
-      <NavigationBar />
+    <div>
+    <NavigationBar />
       <section className="recipeGrid">
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
+        {
+          recipes && recipes.map(recipe=>{
+            return(
+              <RecipeCard 
+                title={recipe.name} 
+                date={moment(recipe.createdAt.toDate()).calendar()}
+                description={recipe.description}
+                ingredients={recipe.ingredients}
+                directions={recipe.directions}
+                cookingTime={recipe.cookingTime}
+                servings={recipe.servings}
+              />
+            )
+          })
+        }
       </section>
-      {/*
-        recipes && recipes.map(recipe=>{
-          return(
-            <div className="">
-              <h4>{recipe.name}</h4>
-              <p>{recipe.description}</p>
-              <p>{recipe.directions}</p>
-              <p>{recipe.ingredients}</p>
-            </div>
-          )
-        })
-      */}
     </div>
     
     

@@ -11,9 +11,11 @@ import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import Grid from '@material-ui/core/Grid';
 import logo from "../images/WeCookLogo.png";
 import { Flag } from '@material-ui/icons';
-
+import moment from 'moment';
+import ViewRecipeButton from './ViewRecipeButton'
 
 const useStyles = makeStyles((theme) => ({
     media: {
@@ -30,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function RecipeCard(props) {
+
+export default function RecipeCard(recipe) {
     const [flag, setFlag] = useState(true);
     const classes = useStyles();
 
@@ -46,28 +49,35 @@ export default function RecipeCard(props) {
                             WC
                         </Avatar>
                     } 
-                    title="Shrimp"
-                    subheader="Date"
+                    title={recipe.title}
+                    subheader={recipe.date}
                 />
                 <CardMedia 
                     className={classes.media}
                     image="https://material-ui.com/static/images/cards/paella.jpg"
                     title="paella"
                 />
-                <CardContent>
-                    <Typography variant='body2'>
-                        This impressive paella is a perfect party dish and a fun meal to cook together with your
-                        guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                    </Typography>
+                <CardContent style={{display:"flex", paddingBottom:"1px" }}>
+                    <Typography variant="body2">{`Serving Size: ${recipe.servings}`}</Typography>
+                    <Typography variant="body2" style={{ marginLeft:'auto'}}>{`Cooking Time: ${recipe.cookingTime}`}</Typography>  
+
+                </CardContent>
+                <CardContent style={{ paddingTop:"1px" }}>
+                    <Typography variant='body2'>{recipe.description}</Typography>  
                 </CardContent>
                 <CardActions>
                     <IconButton aria-label="add to favorites" onClick={handleClick} color={flag ? "currentColor" : "secondary"}>
                         <FavoriteIcon />
                     </IconButton>
                     <div>
-                        <Button variant="outlined">
-                            View Recipe
-                        </Button>
+                        <ViewRecipeButton 
+                            title={recipe.title}
+                            cookingTime={recipe.cookingTime}
+                            servings={recipe.servings}
+                            description={recipe.description} 
+                            directions={recipe.directions} 
+                            ingredients={recipe.ingredients}
+                        />
                     </div>
                 </CardActions>
             </Card>

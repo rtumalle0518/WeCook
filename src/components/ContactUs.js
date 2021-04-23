@@ -1,11 +1,14 @@
 import React from 'react';
 import './contactus.scss'
-import {StyledContainer} from './styles1.js';
+import NavigationBar from './NavigationBar';
+import Footer from "./Footer";
 
 export default function ContactUs(){
     
     
     return(
+        <div>
+            <NavigationBar></NavigationBar>
             <div className="body1">
             <link rel="icon" href="/favicon.ico" />
                 <h1>Need Help or Advice?</h1>
@@ -91,6 +94,8 @@ export default function ContactUs(){
                          </div>
              
             
-                    </div>
+         
+               </div>
+        </div>
     )
 }

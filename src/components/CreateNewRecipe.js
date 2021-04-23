@@ -70,7 +70,7 @@ export default function NewRecipe() {
         onSubmit={(values, onSubmitProps) => {
           onSubmitProps.setSubmitting(true);
           const ingredientsArray = values.ingredients.split("\n");
-          const directionsArray = values.directions.split("\n")
+          const directionsArray = values.directions.split("\n");
           /*
           firestore
             .collection("recipes")
