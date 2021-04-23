@@ -39,7 +39,7 @@ function UserRecipe() {
 
   return (
     <div className="">
-      {/* <NavigationBar />
+      <NavigationBar />
       <section className="recipeGrid">
         <RecipeCard />
         <RecipeCard />
@@ -48,8 +48,8 @@ function UserRecipe() {
         <RecipeCard />
         <RecipeCard />
         <RecipeCard />
-      </section> */}
-      {
+      </section>
+      {/*
         recipes && recipes.map(recipe=>{
           return(
             <div className="">
@@ -60,7 +60,7 @@ function UserRecipe() {
             </div>
           )
         })
-      }
+      */}
     </div>
     
     
