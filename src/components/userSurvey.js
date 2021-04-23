@@ -118,7 +118,7 @@ class Survey extends Component {
 
         questions = <div>
             <h2 style={{textAlign: 'center'}}>Here are some questions</h2>
-            <form onSubmit={this.surveySubmit} style={{textAlign: 'center'}}>
+            <form onSubmit={this.surveySubmit} style={{textAlign: 'center', marginLeft: '770px'}}>
                 <div className="card" >
                     <label>What is your name?</label>
                     <TextField required type = "text" placeholder = "John Bean" helperText = "Full name" name = "userName" variant = "outlined" onChange={this.userSelected}></TextField>
@@ -189,8 +189,8 @@ class Survey extends Component {
                     </FormControl>
                 </div>
                 <div className="card">
+                    Upload profile image
                     <Box color="primary.main" display="flex" justifyContent="center" alignItems="center" p={1}>
-                        
                         <UploadProfileImage></UploadProfileImage>
                     </Box>
                 </div>
