@@ -1,15 +1,13 @@
 
 
 .body1 {
-    background: blue;
+    background: rgb(213, 213, 223);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-image: url('https://images.pexels.com/photos/1910225/pexels-photo-1910225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-    background-size: cover;
 }
 h1{
     text-align: center;
@@ -34,7 +32,7 @@ p.sub-title1{
     -webkit-box-shadow: -2px 22px 61px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: -2px 22px 61px -10px rgba(0,0,0,0.75);
     .contact-info{
-        background-color: #6d04c2;
+        background-color: #365265;
         flex: 0 1 40%;
         border-radius: 15px;
         padding: 40px;
@@ -88,9 +86,10 @@ p.sub-title1{
             padding-right: 40px;
             
             label{
-                font-size: .9rem;
-                color: rgba(255,255,255,.6);
-                margin-bottom: 2rem;
+                font-size: 1rem;
+                color: rgba(17, 16, 16, 0.6);
+                margin-bottom: 1rem;
+                font-weight:800;
             }
             input[type="text"], input[type="tel"], input[type="email"], textarea{
                // background: rgba(255,255,255,.2);

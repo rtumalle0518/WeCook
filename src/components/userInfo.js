@@ -106,7 +106,7 @@ export const UserInfo = () => {
             <NavigationBar></NavigationBar>
             <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh"}}>
                 <Card>
-                    <Box alignItems="center" p={2} display = "flex" justifyContent="center" fontSize={26} textAlign="center" boxShadow={3} bgcolor = "white" width = "100%" height = "95vh" borderColor="primary.main" borderRadius={16}>
+                    <Box alignItems="center" p={2} display = "flex" justifyContent="center" fontSize={25} textAlign="center" boxShadow={3} bgcolor = "white" width = "100%" height = "95vh" borderColor="primary.main" borderRadius={16}>
                         <div>
                             <Box display="flex" justifyContent="center" alignItems="center" p={1}>
                                 <Avatar alt="Remy Sharp" src = {docs.url}/>
