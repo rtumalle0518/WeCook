@@ -8,6 +8,7 @@ import { Form, Button, Card, Alert, Container} from "react-bootstrap"
 import {firestore} from "../firebase";
 import UploadForm from "./UploadForm";
 import ImageGrid from "./ImageGrid";
+import useFirestore from '../hooks/useFirestore';
 var database = firebase.database();
 var name, email, photoUrl, uid, emailVerified, diet, dietGoal, age, height, weight, weightGoal, gender, test;
 var pathReference;
@@ -74,6 +75,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   });
 
 export const UserInfo = () => {
+    const { docs } = useFirestore('images');
     const [user, setUser] = useState([]);
     const [userImage, setImage] = useState([]);
     const ref = firestore.collection("userSurvey").doc(uid);
@@ -106,12 +108,9 @@ export const UserInfo = () => {
                     <Box alignItems="center" p={2} display = "flex" justifyContent="center" fontSize={26} textAlign="center" boxShadow={3} bgcolor = "white" width = "100%" height = "95vh" borderColor="primary.main" borderRadius={16}>
                         <div>
                             <Box display="flex" justifyContent="center" alignItems="center" p={1}>
-                                <Avatar>
-                                    <PersonIcon color="secondary" style={{ fontSize: 40 }}></PersonIcon>
-                                </Avatar>
-                                <Avatar alt="Remy Sharp" src={userImage}/>
+                                <Avatar alt="Remy Sharp" src = {docs.url}/>
                             </Box>
-                            <Box color="primary.main" pt={7}fontSize={57} fontWeight="fontWeightBold"> User information</Box>
+                            <Box color="primary.main" pt={7} fontSize={57} fontWeight="fontWeightBold"> User information</Box>
                             <Box color="primary.main" pt={3}> Name: {name}</Box>
                             <Box color="primary.main" pt={1}> Age: {user.age} years</Box>
                             <Box color="primary.main" pt={1}> Gender: {user.gender}</Box>
@@ -121,7 +120,6 @@ export const UserInfo = () => {
                             <Box color="primary.main" pt={1}> Weight: {user.weight} pounds</Box>
                             <Box color="primary.main" pt={1}> Weight goal: {user.weightGoal}</Box> 
                             <Box color="primary.main" pt={1}> Estimated metabalism: {metabolism} calories</Box> 
-                            <ImageGrid></ImageGrid>
                         </div>
                     </Box>
                 </Card>

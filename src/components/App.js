@@ -19,6 +19,8 @@ import CookBook from "./Cookbook";
 import UserRecipe from "./UserRecipes"
 import ContactUs from "./ContactUs"
 import RecipeCard from "./RecipeCard"
+import UserRecipesPersonal from "./UserRecipesPersonal";
+import NewRecipePersonal from "./newRecipePersonal";
 
 function App() {
 	return (
@@ -34,12 +36,14 @@ function App() {
 						<Route path="/recipe" component={Recipe} />
 						<Route path="/survey" component={Survey} />
 						<Route path="/newrecipe" component={NewRecipe} />
+						<Route path="/newRecipePersonal" component={NewRecipePersonal} />
 						<Route path="/textbox" component={textbox} />
 						<Route path="/meal-plan" component={Plan} />
 						<Route path="/userSurvey" component={userSurvey} />
 						<Route path="/userInfo" component={userInfo} />
 						<Route path="/cookbook" component={CookBook} />
                         <Route path="/userrecipes" component={UserRecipe} />
+						<Route path="/userRecipesPersonal" component={UserRecipesPersonal} />
 						<Route path="/ContactUs" component={ContactUs} />
 						<Route path="/recipecard" compnenet={RecipeCard} />
 					</Switch>

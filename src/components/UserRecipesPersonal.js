@@ -1,11 +1,19 @@
 import firebase from 'firebase';
 import React,{useState,useEffect} from 'react';
-import './UserRecipesGrid.css'
 import { firestore } from '../firebase';
-import RecipeCard from './RecipeCard';
-import NavigationBar from './NavigationBar';
 
-
+var uid;
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        if (user != null) {
+            uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                             // this value to authenticate with your backend server, if
+                             // you have one. Use User.getToken() instead.
+          }
+    } else {
+      // No user is signed in.
+    }
+  });
 
 function UserRecipe() {
     
@@ -20,7 +28,7 @@ function UserRecipe() {
 
   // this.setState({recipes:recipes})
 
-  const ref=firestore.collection("recipes");
+  const ref=firestore.collection("recipes").doc(uid).collection("personal");
   function getRecipes (){
     ref.onSnapshot((querySnapshot) =>{
       const items = [];
@@ -39,16 +47,6 @@ function UserRecipe() {
 
   return (
     <div className="">
-      {/* <NavigationBar />
-      <section className="recipeGrid">
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-      </section> */}
       {
         recipes && recipes.map(recipe=>{
           return(
@@ -62,8 +60,6 @@ function UserRecipe() {
         })
       }
     </div>
-    
-    
   );
 }
 
