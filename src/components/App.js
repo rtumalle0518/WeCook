@@ -35,7 +35,7 @@ function App() {
 						<Route path="/survey" component={Survey} />
 						<Route path="/CreateNewRecipe" component={CreateNewRecipe} />
 						<Route path="/meal-plan" component={Plan} />
-						<Route path="/userSurvey" component={userSurvey} />
+						<PrivateRoute path="/userSurvey" component={userSurvey}/>
 						<Route path="/userInfo" component={userInfo} />
 						<Route path="/cookbook" component={CookBook} />
                         <Route path="/ViewAllRecipes" component={ViewAllRecipes} />

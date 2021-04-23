@@ -215,7 +215,6 @@ class Survey extends Component {
         }
     return (
         <div>
-            <NavigationBar></NavigationBar>
             {intro}
             {questions}
         </div>
