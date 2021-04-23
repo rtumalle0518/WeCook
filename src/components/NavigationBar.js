@@ -35,7 +35,6 @@ export default function NavigationBar() {
                     <Nav className="mr-auto"> 
                         <Nav.Link href="/cookbook">Cookbook</Nav.Link>
                         <Nav.Link href="/survey">Survey</Nav.Link>
-                        <Nav.Link href="/userSurvey">User Survey</Nav.Link>
                         <Nav.Link href="/userInfo">User Info</Nav.Link>
                         <Nav.Link href="/CreateNewRecipe">Add a recipe</Nav.Link>
                         <Nav.Link href="/ViewSubmittedRecipes">Look at your recipes</Nav.Link>
@@ -66,7 +65,6 @@ export default function NavigationBar() {
                     <Nav.Link href="/cookbook">Cookbook</Nav.Link>
                     {/*Comment off line below to get rid of survey button if user is not logged in*/}
                     <Nav.Link href="/survey">Survey</Nav.Link>
-                    <Nav.Link href="/userSurvey">User Survey</Nav.Link>
                     <Nav.Link href="/userInfo">User Info</Nav.Link>
                 </Nav>
                 
