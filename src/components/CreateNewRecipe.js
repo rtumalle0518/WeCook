@@ -11,13 +11,11 @@ import "./Cookbook.css";
 import  './App.css';
 import UploadRecipeImage from "./UploadRecipeImage";
 import Box from "@material-ui/core/Box";
-import useFirestore from '../hooks/useFirestore';
 import * as yup from 'yup'
 
 var uuid = require("uuid");
 
 export default function NewRecipe() {
-  const { docs } = useFirestore('imagesRecipe');
   const user = auth.currentUser
   const history = useHistory();
 
@@ -69,7 +67,6 @@ export default function NewRecipe() {
               user:user.email,
               userid:user.uid,
               recipeid: uuid.v1(),
-              recipeImage: docs.url
             });
 
           console.log(values)
