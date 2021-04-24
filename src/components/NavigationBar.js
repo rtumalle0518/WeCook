@@ -42,6 +42,7 @@ export default function NavigationBar() {
                     
                     <Nav className="ml-auto">
                         <Nav.Link href="/userInfo">Profile</Nav.Link>
+                        <Nav.Link href="/ContactUs">Contact Us</Nav.Link>
                         <Nav.Link href="/WeCook" onClick={handleLogout}>Log Out</Nav.Link>
                     </Nav>
                 </Navbar>
@@ -67,6 +68,7 @@ export default function NavigationBar() {
                 </Nav>
                 
                 <Nav className="ml-auto">
+                    <Nav.Link href="/ContactUs">Contact Us</Nav.Link>
                     <Nav.Link href="/login">Log In</Nav.Link>
                     <Nav.Link href="/signup">Sign Up</Nav.Link>
                 </Nav>
