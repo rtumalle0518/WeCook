@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import{ makeStyles } from '@material-ui/core/styles'
+import React, {useState} from 'react';
+import{ makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
@@ -52,11 +52,14 @@ export default function RecipeCard(recipe) {
                     title={recipe.title}
                     subheader={recipe.date}
                 />
-                <CardMedia 
-                    className={classes.media}
-                    image="https://material-ui.com/static/images/cards/paella.jpg"
-                    title="paella"
-                />
+                <CardMedia>
+                    <img
+                        src={logo}
+                        width="100%"
+                        height="100%"
+                        alt="We Cook Logo"
+                    />
+                </CardMedia>
                 <CardContent style={{display:"flex", paddingBottom:"1px" }}>
                     <Typography variant="body2">{`Serving Size: ${recipe.servings}`}</Typography>
                     <Typography variant="body2" style={{ marginLeft:'auto'}}>{`Cooking Time: ${recipe.cookingTime}`}</Typography>  
