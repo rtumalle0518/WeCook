@@ -21,15 +21,15 @@ export default function ContactUs(){
                         </h4>
                         <p> Fill up the form and then click (Send). </p>
                         <div className="icon-text">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                            <span>856-693-9008</span>
+                        <i className="fa fa-address-book-o" aria-hidden="true"></i>
+                            <span>Phone: 856-693-9008</span>
                         </div><div className="icon-text">
                         <i className="fa fa-address-book-o" aria-hidden="true"></i>
-                            <span>team12swe@gmail.com</span>
+                            <span>E-mail: team12swe@gmail.com</span>
                         </div>
                         <div className="icon-text">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <span>131 Recipe Park, New Brunswick, NJ 08906</span>
+                            <span>Address: 131 Recipe Park, New Brunswick, NJ 08906</span>
                         </div>
                         <div className="social-media">
                             <a href="$"className="icon-circle">
