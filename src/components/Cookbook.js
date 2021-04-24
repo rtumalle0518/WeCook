@@ -68,7 +68,7 @@ export default function CookBook() {
 			<NavigationBar></NavigationBar>
 			<div className="Header">
 				<div className="cookbooktext">CookBook</div>
-				<form onSubmit={getSearch} className="search-form">
+				<form id="CBForm" onSubmit={getSearch} className="search-form">
 					<input
 						className="search-bar"
 						type="text"
