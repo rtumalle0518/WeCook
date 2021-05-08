@@ -4,8 +4,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+To get started working on the app:
+## `git clone https://github.com/rtumalle0518/WeCook'
 
+Clones the repo, and after cloning\
+You must delete package-lock.json file
+
+## `npm install`
+
+Once you deleted package-lock.json\
+Run npm install to download all packages
+
+
+In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -14,10 +25,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
